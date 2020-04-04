@@ -1,2 +1,2 @@
 # Oxford_IA_Atlas
-Historical digital mapping project of Oxford, Iowa
+An historical digital mapping project of Oxford, Iowa. See the map here.
