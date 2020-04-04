@@ -1,0 +1,282 @@
+<html lang='en'>
+
+<head>
+  <title>Historical Atlas of Oxford, Iowa</title>
+  <meta charset="utf-8" />
+  <!--for map and font styles-->
+  <link href='https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.min.css' rel='stylesheet'>
+  <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+  <link href="https://fonts.googleapis.com/css2?family=Quattrocento&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!--for filter button icon support-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
+
+  <!--leaflet tag filter buttons from: https://github.com/maydemirx/leaflet-tag-filter-button-->
+  <link rel="stylesheet" href="src/leaflet-tag-filter-button.css">
+  <link rel="stylesheet" href="src/easy-button.css">
+
+  <style type="text/css">
+    <style>body {
+      margin: 0px;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Add banner to header background */
+    header {
+      background-image: url('images/Sheep_farm_Oxford.png');
+      position: fixed;
+      width: 100%;
+      height: 100px;
+      background-color: #000000;
+      box-shadow: 0px 5px 5px black;
+      z-index: 800;
+    }
+
+    /* Set and style fonts for text in map */
+    h1 {
+      font-family: 'Quattrocento', serif;
+      font-size: 40px;
+      display: inline-block;
+      color: #f7f4ea;
+      margin-top: 0.5em;
+      margin-bottom: 0.0em;
+      margin-left: 0.5em;
+      margin-right: 0;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      display: inline-block;
+      color: #f7f4ea;
+      margin-top: 0.5em;
+      margin-bottom: 0.0em;
+      margin-left: 1.5em;
+      margin-right: 0;
+      font-weight: normal;
+    }
+
+    h3 {
+      font-family: 'Quattrocento', serif;
+      font-size: 8px;
+      display: block;
+      margin-top: 0.0em;
+      margin-bottom: 0.0em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: normal;
+    }
+
+    /* Set map parameters */
+    #map {
+      position: fixed;
+      top: 100px;
+      bottom: 0px;
+      width: 100%;
+    }
+
+    /* Set background colors for popup windows */
+    .leaflet-popup-content-wrapper {
+      background-color: #f2eecb;
+    }
+
+    .leaflet-popup-tip {
+      /*display: none;*/
+      border-top:10px solid #f2eecb;
+    }
+
+    /* Set background color of layer control */
+    .leaflet-control-layers-expanded {
+      font-family: 'Quattrocento', serif;
+      font-size: 15px;
+      display: inline-block;
+      background-color: #f2eecb;
+    }
+
+    .easy-button-button {
+      display: inline-block !important;
+    }
+
+    .tag-filter-tags-container {
+      left: 30px;
+    }
+
+    .leaflet-touch .leaflet-bar a {
+      background-color: #f2eecb;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Oxford, Iowa: 1870</h1><br>
+    <h2>Map by Jay Bowen, 2020</h2>
+  </header>
+
+  <!-- map -->
+  <div id="map"></div>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+  <script src='https://api.mapbox.com/mapbox-assembly/v0.8.0/assembly.js'></script>
+
+  <!-- for button-dependent map information window -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script src="src/easy-button.js"></script>
+  <script src="src/leaflet-tag-filter-button.js"></script>
+
+  <script>
+    // add mapbox tiles
+    L.mapbox.accessToken = 'pk.eyJ1IjoiamVib3dlMyIsImEiOiJjajY1M3l6bWIxeTQwMndtcXRuN3F4ejFpIn0.aE7P49pqaBKjy2HTOw-tgw'; // enter Mapbox access token
+
+    var basemap = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzc5x7100a1jp70zpxcxap');
+    /*
+        // define the basemap using the thunderforest pioneer map and set minimum and maximum zoom levels
+        var basemap = L.tileLayer('https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=dd2dca516d114fd89c0b1403358cbfa8', {
+          attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          apikey: '<dd2dca516d114fd89c0b1403358cbfa8>',
+          maxZoom: 16,
+          minZoom: 7,
+        });
+    */
+    var overmap1 = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzi05u17851ip494ycaerz');
+
+    // center map on Iowa coordinates and set initial zoom
+    var map = L.map('map', {
+      maxBounds: L.latLngBounds([44, -88.0], [40.0, -99.0]),
+      layers: [basemap, overmap1]
+    }).setView([41.742764, -91.768114], 12);
+
+    // add a scale bar
+    L.control.scale({
+      position: 'bottomright'
+    }).addTo(map);
+
+    // Add a function to style the polygons by values
+    function getColorOrigin(d) {
+      return d === "Canada" ? '#a42c31' :
+        d === "E. Europe" ? '#e3e600' :
+        d === "East" ? '#0e4bef' :
+        d === "Germanic" ? '#8954c0' :
+        d === "Iowa" ? 'tan' :
+        d === "Midwest" ? '#58bb8e' :
+        d === "South" ? '#00a6d6' :
+        d === "UK" ? '#cd89ab' :
+        d === "N. Europe" ? '#81de5f' :
+        d === "No Data" ? 'gray' :
+        'rgba(0,0,0,0.0)'; // supported by Microsoft Edge?
+      //'#1C00ff00';
+    };
+
+    // load the data asynchronously
+    d3.queue()
+      .defer(d3.json, 'data/Oxford_Land_Master_1870.geojson')
+      .await(drawMap);
+
+    // define drawMap function
+    function drawMap(err, oxfordLots1870) {
+
+      var oxfordPlots1870 = L.geoJson(oxfordLots1870, {
+
+        // style the layer
+        style: function(feature) {
+
+          var tags = [];
+          tags.push(feature.properties.dta_fam_region);
+          tags.push('Owner: ' + feature.properties.surname);
+          tags.push(feature.properties.top_ten_perc);
+          tags.push(feature.properties.top_twentyfive_perc);
+          tags.push(feature.properties.top_fifty_perc);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.dta_fam_region),
+            fillOpacity: 0.5,
+            tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+          // bind a popup window
+          layer.bindPopup('<h3>' + feature.properties.surname + ', ' + feature.properties.firstname + '<br>' + 'Family Origin: ' + feature.properties.dta_fam_region + '</h3>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordPlots1870.resetStyle(e.target);
+          });
+
+        }
+
+      }).addTo(map); // add the layer to the map
+
+      L.control.tagFilterButton({
+          data: ['Canada', 'E. Europe', 'East', 'Germanic', 'Iowa', 'Midwest', 'South', 'UK', 'N. Europe', 'No Data'],
+          icon: '<i class="fas fa-globe" style="font-size:18px; padding-top: 6px;"></i>',
+          filterOnEveryClick: true
+      }).addTo(map);
+
+      L.control.tagFilterButton({
+        data: ['Owner: A.S.', 'Owner: Ackerman', 'Owner: Adams', 'Owner: Ahren', 'Owner: Alexander', 'Owner: Amana Society', 'Owner: Baker', 'Owner: Barnes', 'Owner: Barry', 'Owner: Baum', 'Owner: Bell', 'Owner: Benton', 'Owner: Berryhill', 'Owner: Bireline', 'Owner: Black', 'Owner: Bond', 'Owner: Bostwick', 'Owner: Brant', 'Owner: Brennan', 'Owner: Brick', 'Owner: Brown', 'Owner: Bryant', 'Owner: C.R.I.P. R.R. Co.', 'Owner: Carson', 'Owner: Cary', 'Owner: Church', 'Owner: Clark', 'Owner: Clear', 'Owner: Clensman', 'Owner: Clodfelter', 'Owner: Co.', 'Owner: Collins', 'Owner: Combe', 'Owner: Conner', 'Owner: Conners', 'Owner: Cook', 'Owner: Cooke', 'Owner: Corbin', 'Owner: Cotter', 'Owner: Cox', 'Owner: Crawford', 'Owner: Crossen', 'Owner: Curtis', 'Owner: Cushing', 'Owner: D.L.D.', 'Owner: Daniels', 'Owner: Darling', 'Owner: David', 'Owner: Delaney', 'Owner: Delwiter', 'Owner: Donahoe', 'Owner: Donaldson', 'Owner: Donhan', 'Owner: Doty', 'Owner: Douglass', 'Owner: Downey', 'Owner: Durant', 'Owner: Dutch', 'Owner: E.E.', 'Owner: E.E.W.', 'Owner: Eddy', 'Owner: Edwards', 'Owner: Elliott', 'Owner: Emary', 'Owner: Emmery', 'Owner: English', 'Owner: Ewing', 'Owner: Fall', 'Owner: Ferguson', 'Owner: Fitzgerald', 'Owner: Floerchinger', 'Owner: Foley', 'Owner: Foster', 'Owner: Gaheen', 'Owner: Gard', 'Owner: Garitz', 'Owner: Geigenheimer', 'Owner: Gibbony', 'Owner: Gilroy', 'Owner: Goben', 'Owner: Gossenberger', 'Owner: Gould', 'Owner: H.', 'Owner: H.T.S.', 'Owner: Hamilton', 'Owner: Hardy', 'Owner: Harkowitz', 'Owner: Harper', 'Owner: Hartwell', 'Owner: Hayes', 'Owner: Heifner', 'Owner: Heitz', 'Owner: Henderson', 'Owner: Hilborn', 'Owner: Holle', 'Owner: Howard', 'Owner: Huff', 'Owner: Hughes', 'Owner: Hutt', 'Owner: Imeel', 'Owner: Ives', 'Owner: J.D.', 'Owner: J.M.', 'Owner: J.N.', 'Owner: J.R.?', 'Owner: Jacobs', 'Owner: Johnson Co.', 'Owner: Kadera', 'Owner: Kelly', 'Owner: Kennedy', 'Owner: Kershaw', 'Owner: Kirf', 'Owner: Klaus', 'Owner: Klenk', 'Owner: Krall', 'Owner: L.C.', 'Owner: L.R.', 'Owner: Landerbalk', 'Owner: Lengle', 'Owner: Linkhart', 'Owner: Logan', 'Owner: Loveless', 'Owner: Lucas', 'Owner: Luse', 'Owner: Lyle', 'Owner: M.H.H. & Co.', 'Owner: Maetter', 'Owner: Maher', 'Owner: Mahoney', 'Owner: Mahony', 'Owner: Markham', 'Owner: Marvin', 'Owner: Mastern', 'Owner: McCaddon', 'Owner: McCandless', 'Owner: McDonough', 'Owner: McFarland', 'Owner: McGillicuddy', 'Owner: McKee', 'Owner: McVean', 'Owner: Mechler', 'Owner: Mendenhall', 'Owner: Merritt', 'Owner: Moreland', 'Owner: Myers', 'Owner: Nels', 'Owner: Novak', 'Owner: Oakes', 'Owner: Oaks', 'Owner: Osborn', 'Owner: Ostericher', 'Owner: Plympton', 'Owner: Price', 'Owner: Ra?', 'Owner: Remley', 'Owner: Rentz', 'Owner: Renz', 'Owner: Rourk', 'Owner: S.S.', 'Owner: Saxon', 'Owner: Saxton', 'Owner: Schonborn', 'Owner: Scott', 'Owner: Sheen', 'Owner: Sies', 'Owner: Smith', 'Owner: Spillam', 'Owner: Starr', 'Owner: Stone', 'Owner: Stratton', 'Owner: T.C.', 'Owner: Taylor', 'Owner: Thomas', 'Owner: Thompson', 'Owner: Tranter', 'Owner: Troulman', 'Owner: Vanderlip', 'Owner: Voelker', 'Owner: W.A.D.', 'Owner: W.G.', 'Owner: Wagner', 'Owner: Wallace', 'Owner: Walters', 'Owner: Ward', 'Owner: Waterman', 'Owner: Welch', 'Owner: Wentz', 'Owner: Wesiner', 'Owner: Wilcox', 'Owner: Williams', 'Owner: Winder', 'Owner: Woods', 'Owner: Yenter'],
+        icon: '<i class="fas fa-user-circle" style="font-size:18px; padding-top: 6px;"></i>',
+        filterOnEveryClick: true
+      }).addTo(map);
+
+      L.control.tagFilterButton({
+        data: ['Top 10% of landowners by acreage', 'Top 25% of landowners by acreage', 'Top 50% of landowners by acreage'],
+        icon: '<i class="fas fa-border-all" style="font-size:18px; padding-top: 6px;"></i>',
+        filterOnEveryClick: true
+      }).addTo(map);
+
+      jQuery('.easy-button-button').click(function() {
+        target = jQuery('.easy-button-button').not(this);
+        target.parent().find('.tag-filter-tags-container').css({
+          'display': 'none',
+        });
+      });
+
+      //disable dragging of the map after clicking a filter button
+      jQuery('.easy-button-button').click(function() {
+        map.dragging.disable();
+      });
+
+      //enable dragging of the map after clicking on the map
+      map.on('click', function() {
+        map.dragging.enable();
+      });
+
+      var baseMaps = {
+        "Contemporary": basemap,
+        "1870 Map": overmap1
+      };
+
+      var overlays = {
+        "Lots, 1870": oxfordPlots1870,
+      }
+
+      // all done with the layers, add them to layer control
+      L.control.layers(baseMaps, overlays, {
+        collapsed: false,
+      }).addTo(map);
+
+    }; // end drawMap function
+
+  </script>
+</body>
+
+</html>
