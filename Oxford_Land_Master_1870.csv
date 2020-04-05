@@ -1,0 +1,293 @@
+id,twp,range,section,subdiv1,subdiv2,notes,surname,firstname,feature1,feature2,feature3,feature4,feature5,acres,feature6,full_name,dta_fam_region,dta_obs,acres_by_landowner,top_ten_perc,top_twentyfive_perc,top_fifty_perc
+"265","80","8","34",NW,NW,,Harper,T.J.,,,,,,40,,"Harper, T.J.",East,"17",3.785,,,
+"62","80","8","8",NW,NW,,Delwiter,A.N.,timber,,,,,40,,"Delwiter, A.N.",,,7.696,,,Top 50% of landowners by acreage
+"237","80","8","30",NE,SW,"creek labeled ""Clear Creek""",Mendenhall,M.,creek,timber,,,,40,,"Mendenhall, M.",,,3.685,,,
+"190","80","8","25",NE,SE,,Bond,A.J.,farmhouse,railroad,,,,40,,"Bond, A.J.",East,"2",11.365,,,Top 50% of landowners by acreage
+"2","80","8","1",NE,SE,,Kelly,Jno.,,,,,,40,,"Kelly, Jno.",UK,"11",10.988,,,Top 50% of landowners by acreage
+"3","80","8","1",NE,SW,,Gaheen,P.,farmhouse,,,,,40,,"Gaheen, P.",,,13.224,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"200","80","8","26",NE,SW,1/2 of NESW,Logan,L. Jr.,timber,,,,,20,,"Logan, L. Jr.",UK,"20",1.912,,,
+"210","80","8","27",NE,SE,,Stone,D.F.,,,,,,40,,"Stone, D.F.",,,7.521,,,Top 50% of landowners by acreage
+"76","80","8","10",NE,NW,,Hilborn,W.,farmhouse,road,,,,40,,"Hilborn, W.",East,"10",3.768,,,
+"215","80","8","28",NE,SE,,Marvin,William E,road,,,,,40,,"Marvin, William E",Midwest,"48",9.361,,,Top 50% of landowners by acreage
+"33","80","8","5",NE,SW,,Heifner,Thomas,cemetary,road,,,,40,,"Heifner, Thomas",East,"9",18.828,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"63","80","8","8",NW,NE,,Osborn,C.,timber,road,,,,40,,"Osborn, C.",East,"5",5.152,,,
+"148","80","8","19",NE,NE,,McKee,Jas.,road,,,,,40,,"McKee, Jas.",UK,"1",3.742,,,
+"44","80","8","6",NW,SW,,Rentz,R.,timber,,,,,40,,"Rentz, R.",Germanic,"15",4.015,,,
+"132","80","8","18",NW,SW,1/2 of NWSW,H.T.S.,,farmhouse,road,,,,20,,H.T.S.,,,1.968,,,
+"45","80","8","6",NW,SE,,Goben,H.,farmhouse,timber,,,,40,,"Goben, H.",UK,"11",3.989,,,
+"131","80","8","18",NW,SE,1/2 of NWSE,Nels,A.,timber,road,,,,20,,"Nels, A.",,,1.974,,,
+"13","80","8","2",NW,NW,,Hughes,Ed,farmhouse,orchard,road,,,40,,"Hughes, Ed",UK,"74",3.644,,,
+"21","80","8","3",NW,NW,,Co.,,road,,,,,40,,Co.,,,7.124,,,
+"11","80","8","2",NE,NW,,Markham,M.,farmhouse,orchard,road,,,40,,"Markham, M.",East,"10",9.884,,,Top 50% of landowners by acreage
+"12","80","8","2",NW,NE,,Waterman,S.S.,farmhouse,road,,,,40,,"Waterman, S.S.",East,"7",3.676,,,
+"37","80","8","5",SW,SW,,Woods,J.P.,timber,,,,,40,,"Woods, J.P.",UK,"5",3.743,,,
+"49","80","8","6",SE,SW,1/2 of SESW,Holle,F.,timber,,,,,20,,"Holle, F.",,,1.93,,,
+"18","80","8","2",SE,SE,,Corbin,A.,road,,,,,40,,"Corbin, A.",,,7.511,,,
+"30","80","8","4",SE,SE,,Moreland,J.,farmhouse,orchard,road,,,40,,"Moreland, J.",Midwest,"2",3.749,,,
+"38","80","8","5",SW,SE,1/2 of SWSE,Doty,L.,timber,,,,,20,,"Doty, L.",Midwest,"117",9.296,,,Top 50% of landowners by acreage
+"50","80","8","6",SE,SE,,Foster,C.A.,timber,,,,,40,,"Foster, C.A.",East,"33",19.79,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"6","80","8","1",SW,NW,"2/3 of SWNW; Merge with sec2 SENE",Markham,M.,creek,road,,,,66.6,,"Markham, M.",East,"10",9.884,,,Top 50% of landowners by acreage
+"36","80","8","5",SW,NW,,Delwiter,A.N.,timber,road,,,,40,,"Delwiter, A.N.",,,7.696,,,Top 50% of landowners by acreage
+"35","80","8","5",SW,NE,,Heitz,M.,timber,road,,,,40,,"Heitz, M.",,,22.775,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"51","80","8","6",SE,NE,,Doty,L.,timber,,,,,40,,"Doty, L.",Midwest,"117",9.296,,,Top 50% of landowners by acreage
+"95","80","8","12",SE,NE,,Clark,H.,farmhouse,orchard,road,,,40,,"Clark, H.",East,"34",3.727,,,
+"68","80","8","8",NW,SW,,Hartwell,J.L.,timber,,,,,40,,"Hartwell, J.L.",Canada,"11",26.31,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"88","80","8","11",NE,SW,,Huff,W.J.,farmhouse,orchard,,,,40,,"Huff, W.J.",East,"5",3.771,,,
+"64","80","8","8",NW,SE,,Brant,P.,road,,,,,40,,"Brant, P.",East,"78",7.509,,,
+"54","80","8","7",NW,SW,,Brown,S.P.,farmhouse,timber,railroad,,,40,,"Brown, S.P.",East,"20",3.76,,,
+"79","80","8","10",SW,SW,,Daniels,F.,road,,,,,40,,"Daniels, F.",,,3.751,,,
+"96","80","8","12",SE,SE,,Cushing,A.L.,,,,,,40,,"Cushing, A.L.",,,3.714,,,
+"97","80","8","12",SE,SW,,Curtis,A.,,,,,,40,,"Curtis, A.",,,3.758,,,
+"127","80","8","17",NW,NW,,Brant,P.,,,,,,40,,"Brant, P.",East,"78",7.509,,,
+"112","80","8","14",NE,NE,,Collins,M.,road,,,,,40,,"Collins, M.",UK,"34",3.8,,,
+"116","80","8","15",NE,NE,,Collins,D.,farmhouse,road,creek,,,40,,"Collins, D.",UK,"34",3.73,,,
+"115","80","8","15",NE,NW,,Cary,M.,,,,,,40,,"Cary, M.",,,3.739,,,
+"143","80","8","18",SE,SE,,Cook,E.,road,,,,,40,,"Cook, E.",Midwest,"89",3.714,,,
+"102","80","8","13",SE,NW,,Clear,M.,,,,,,40,,"Clear, M.",UK,"77",3.734,,,
+"141","80","8","18",SE,NE,,Renz,B.,creek,railroad,,,,40,,"Renz, B.",,,11.175,,,Top 50% of landowners by acreage
+"153","80","8","20",SW,NW,,Eddy,William,road,,,,,40,,"Eddy, William",East,"44",15.816,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"183","80","8","24",NE,SW,,Spillam,T.,,,,,,40,,"Spillam, T.",,,3.733,,,
+"170","80","8","23",NW,SE,,Crossen,Jno.,farmhouse,schoolhouse,road,,,40,,"Crossen, Jno.",UK,"2",3.673,,,
+"164","80","8","22",NE,SE,,Gould,William,farmhouse,orchard,road,,,40,,"Gould, William",East,"24",3.728,,,
+"142","80","8","19",SE,SW,,Cook,H.,timber,,,,,40,,"Cook, H.",Midwest,"89",3.675,,,
+"171","80","8","23",SE,SW,"1/2 of SESW; Creek labeled ""Clear Creek""",J.R.?,,creek,railroad,timber,,,20,,J.R.?,,,1.931,,,
+"169","80","8","23",SW,SE,"Creek labeled ""Clear Creek""",McGillicuddy,F.,creek,timber,railroad,,,40,,"McGillicuddy, F.",,,10.394,,,Top 50% of landowners by acreage
+"208","80","8","26",NW,NW,"1/3 of NWNW; creek labeled ""Clear Creek""",McGillicuddy,F.,timber,creek,,,,13.3,,"McGillicuddy, F.",,,10.394,,,Top 50% of landowners by acreage
+"238","80","8","30",NE,NW,,Eddy,B.,timber,,,,,40,,"Eddy, B.",East,"44",11.205,,,Top 50% of landowners by acreage
+"204","80","8","26",NE,NW,,Douglass,F.,timber,,,,,40,,"Douglass, F.",Midwest,"71",3.748,,,
+"205","80","8","26",NW,NE,,Williams,P.,timber,,,,,40,,"Williams, P.",Midwest,"96",3.759,,,
+"209","80","8","27",NE,NE,"creek labeled ""Clear Creek""",Barry,R.,timber,creek,,,,40,,"Barry, R.",UK,"93",3.804,,,
+"217","80","8","28",NE,NE,"1/2 of NENE; creek labeled ""Clear Creek""",Scott,John,timber,creek,,,,20,,"Scott, John",Midwest,"17",43.343,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"225","80","8","29",NE,NE,,Smith,Jno.,road,,,,,40,,"Smith, Jno.",Midwest,"84",11.257,,,Top 50% of landowners by acreage
+"231","80","8","30",SE,SW,,Crawford,Mary,farmhouse,orchard,road,,,40,,"Crawford, Mary",UK,"21",3.738,,,
+"191","80","8","25",SE,SE,,Ackerman,M.,timber,,,,,,,"Ackerman, M.",Germanic,"39",3.867,,,
+"232","80","8","30",SW,SE,,Collins,G.D.,road,,,,,40,,"Collins, G.D.",UK,"34",3.733,,,
+"255","80","8","33",SW,SE,,Corbin,A.,road,,,,,40,,"Corbin, A.",,,7.511,,,
+"254","80","8","33",SW,SW,,Baum,C.C.,farmhouse,timber,road,,,40,,"Baum, C.C.",Midwest,"9",3.777,,,
+"330","81","8","36",NW,NW,Iowa River,E.E.,,pond,creek,river,,,40,,E.E.,,,3.769,,,
+"314","81","8","34",SW,SW,,Co.,,road,,,,,40,,Co.,,,7.124,,,
+"308","81","8","33",SW,SE,,Hughes,J.D.,farmhouse,road,,,,40,,"Hughes, J.D.",UK,"74",3.686,,,
+"309","81","8","33",SW,NE,,Heifner,D.,road,,,,,40,,"Heifner, D.",East,"9",10.733,,,Top 50% of landowners by acreage
+"31","80","8","5",NE,NE,,Doty,L.,road,,,,,40,,"Doty, L.",Midwest,"117",9.296,,,Top 50% of landowners by acreage
+"307","81","8","33",SW,SW,,Bell,Jos.,farmhouse,road,,,,40,,"Bell, Jos.",Midwest,"38",3.776,,,
+"306","81","8","33",SW,NW,,Alexander,W.B.,farmhouse,road,,,,40,,"Alexander, W.B.",East,"3",3.777,,,
+"317","81","8","34",NE,SW,Iowa River,Stone,D.F.,river,,,,,40,,"Stone, D.F.",,,7.521,,,Top 50% of landowners by acreage
+"316","81","8","34",SE,NW,,Harkowitz,J.,creek,,,,,40,,"Harkowitz, J.",,,3.722,,,
+"318","81","8","34",NE,SE,,Adams,Jas.,,,,,,40,,"Adams, Jas.",,,3.717,,,
+"319","81","8","34",NE,NE,Iowa River,Gould,Mary,timber,river,,,,40,,"Gould, Mary",East,"24",3.762,,,
+"323","81","8","35",NE,SW,Iowa River,Kelly,J.F.,river,,,,,40,,"Kelly, J.F.",UK,"11",3.686,,,
+"322","81","8","35",SE,SW,,Bostwick,H.,,,,,,40,,"Bostwick, H.",,,3.806,,,
+"292","81","8","29",SW,SW,1/3 of SWSW,A.S.,,timber,,,,,13.3,,A.S.,,,1.297,,,
+"296","81","8","29",SW,NW,1/3 of SWNW,J.D.,,timber,,,,,13.3,,J.D.,,,2.535,,,
+"284","81","8","30",SE,SE,Iowa River,Brown,Jos.,timber,river,,,,40,,"Brown, Jos.",East,"20",11.303,,,Top 50% of landowners by acreage
+"298","81","8","29",SE,SW,,Heifner,Thomas,timber,creek,pond,,,40,,"Heifner, Thomas",East,"9",18.828,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"299","81","8","29",SE,SE,,Darling,J.H.,road,,,,,40,,"Darling, J.H.",,,3.817,,,
+"300","81","8","29",SE,NE,Iowa River,C.R.I.P. R.R. Co.,,road,river,,,,40,,C.R.I.P. R.R. Co.,,,3.823,,,
+"302","81","8","28",SW,SW,,Loveless,E.J.,creek,pond,,,,40,,"Loveless, E.J.",,,3.815,,,
+"301","81","8","28",SW,NW,Iowa River,Johnson Co.,,river,,,,,40,,Johnson Co.,,,3.856,,,
+"9","80","8","1",E-,SE,,Novak,Jno.,,,,,,80,,"Novak, Jno.",Germanic,"50",7.455,,,
+"8","80","8","1",E-,SW,,Berryhill,Charles H,,,,,,80,,"Berryhill, Charles H",,,7.444,,,
+"1","80","8","1",N-,NE,,Krall,Joseph,farmhouse,road,,,,80,,"Krall, Joseph",,,7.28,,,
+"4","80","8","1",W-,NE,,Kershaw,Lees,farmhouse,road,,,,80,,"Kershaw, Lees",UK,"8",11.031,,,Top 50% of landowners by acreage
+"5","80","8","1",W-,NW,Merge with 1/3 of SWNW,Gould,Henry,creek,road,,,,93.3,,"Gould, Henry",East,"24",8.548,,,Top 50% of landowners by acreage
+"7","80","8","1",S-,SW,,Smith,E.D.,,,,,,80,,"Smith, E.D.",Midwest,"84",7.38,,,
+"10","80","8","2",E-,NE,,Barnes,W.F.,farmhouse,orchard,creek,road,,80,,"Barnes, W.F.",UK,"62",14.92,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"14","80","8","2",N-,SW,,Kelly,Jno.,farmhouse,orchard,road,,,80,,"Kelly, Jno.",UK,"11",10.988,,,Top 50% of landowners by acreage
+"15","80","8","2",SW,,,Welch,George E,farmhouse,,,,,160,,"Welch, George E",UK,"2",14.96,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"16","80","8","2",NE,SW,Merge with SENW,Waterman,M.A.,farmhouse,road,,,,80,,"Waterman, M.A.",East,"7",7.426,,,
+"20","80","8","3",NE,NW,Merge with NWNE,Starr,Charles J,road,,,,,80,,"Starr, Charles J",,,7.194,,,
+"22","80","8","3",SW,,Merge with N-SW,Doty,Abraham,farmhouse,orchard,road,,,240,,"Doty, Abraham",Midwest,"117",22.653,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"23","80","8","3",SE,,Merge with N-SE,Smith,A.P. & S.W.,farmhouse (3),orchard,road,,,240,,"Smith, A.P. & S.W.",Midwest,"84",22.351,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"24","80","8","4",N-,NE,,Doty,Luther,farmhouse,orchard,road,,,80,,"Doty, Luther",Midwest,"117",6.893,,,
+"25","80","8","4",N-,SE,,Doty,Lewis,farmhouse,orchard,creek,road,,80,,"Doty, Lewis",Midwest,"117",18.655,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"26","80","8","4",N-,NW,,Heifner,D.,farmhouse,orchard,road,,,80,,"Heifner, D.",East,"9",10.733,,,Top 50% of landowners by acreage
+"27","80","8","4",W-,SW,Merge with NWSW,Heifner,Thomas,farmhouse,orchard,timber,road,,120,,"Heifner, Thomas",East,"9",18.828,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"28","80","8","4",W-,SE,Merge with NWSE,Doty,Lewis,schoolhouse,creek,road,,,120,,"Doty, Lewis",Midwest,"117",18.655,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"29","80","8","4",S-,NE,Merge with SESW,Oaks,P.,farmhouse,creek,road,,,120,,"Oaks, P.",East,"20",22.594,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"32","80","8","5",NW,NE,Merge with NENW,Wallace,E.R.,farmhouse,schoolhouse,road,,,80,,"Wallace, E.R.",Midwest,"44",7.299,,,
+"34","80","8","5",SE,,"Merge with NESE; farmhouse labeled ""Iowa Valley Farm""",Heitz,M.,farmhouse,timber,road,,,200,,"Heitz, M.",,,22.775,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"39","80","8","5",SW,SE,1/2 of SWSE,Amana Society,,timber,road,,,,20,,Amana Society,,,24.215,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"40","80","8","5",N-,SW,,Voelker,William,farmhouse,,,,,80,,"Voelker, William",,,7.421,,,
+"46","80","8","6",S-,NW,Merge with SWSE,Wagner,J.S.,timber,road,,,,120,,"Wagner, J.S.",Germanic,"116",11.275,,,Top 50% of landowners by acreage
+"48","80","8","6",SE,SW,1/2 of SESW,Baker,W.,timber,,,,,20,,"Baker, W.",Canada,"9",1.784,,,
+"42","80","8","6",NE,,Merge with SENW,Merritt,C.,farmhouse,orchard,timber,road,,200,,"Merritt, C.",East,"5",19.282,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"53","80","8","7",E-,NW,"Merge with W-NE, 1/2 of NWNW",Foster,C.A.,farmhouse,orchard,timber,road,,140,,"Foster, C.A.",East,"33",19.79,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"57","80","8","7",E-,SE,,Troulman,C.,road,,,,,80,,"Troulman, C.",,,9.858,,,Top 50% of landowners by acreage
+"59","80","8","7",E-,NE,1/3 of E-NE,H.,H.,timber,,,,,26.6,,"H., H.",,,2.073,,,
+"58","80","8","7",N-,NE,1/4 of N-NE,Klaus,J.K.,timber,,,,,10,,"Klaus, J.K.",,,1.389,,,
+"61","80","8","7",E-,NE,1/3 of E-NE,Ahren,J.,farmhouse,timber,,,,26.6,,"Ahren, J.",UK,"6",2.445,,,
+"60","80","8","7",E-,NE,1/3 of E-NE,Troulman,C.,timber,,,,,26.6,,"Troulman, C.",,,9.858,,,Top 50% of landowners by acreage
+"72","80","8","8",W-,SW,,Bryant,Samuel,farmhouse,schoolhouse,orchard,road,timber,80,,"Bryant, Samuel",East,"1",7.528,,,Top 50% of landowners by acreage
+"66","80","8","8",W-,SE,,Brant,Peter,farmhouse,orchard,road,,,80,,"Brant, Peter",East,"78",6.011,,,
+"70","80","8","8",W-,SE,less than 1/4 of W-SE,Osborn,C.,farmhouse,orchard,road,,,15,,"Osborn, C.",East,"5",5.152,,,
+"77","80","8","8",E-,NW,"Merge with SENW, 1/2 of SESW",Schonborn,J.,farmhouse,orchard,timber,road,,140,,"Schonborn, J.",E. Europe,"31",13.264,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"65","80","8","8",E-,NE,"Merge with SENE, 1/2 of SESE",Gossenberger,C.,farmhouse,orchard,timber,road,,140,,"Gossenberger, C.",,,13.193,,,Top 50% of landowners by acreage
+"67","80","8","9",W-,NW,,Hardy,Jas.,farmhouse,road,,,,80,,"Hardy, Jas.",UK,"78",7.58,,,Top 50% of landowners by acreage
+"69","80","8","9",N-,NE,Merge with NWNE,Oaks,P.,farmhouse,timber,creek,road,,120,,"Oaks, P.",East,"20",22.594,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"71","80","8","9",W-,SW,"Merge with SWNE, NWSE",Saxton,Luther C.,farmhouse (2),orchard (2),road,timber,creek,160,,"Saxton, Luther C.",East,"129",14.987,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"73","80","8","9",SE,NW,Merge with NESW,Thompson,R.,farmhouse,timber,,,,80,,"Thompson, R.",UK,"41",7.522,,,Top 50% of landowners by acreage
+"74","80","8","9",SE,NE,Merge with NESE,Brown,Jos.,,,,,,80,,"Brown, Jos.",East,"20",11.303,,,Top 50% of landowners by acreage
+"76","80","8","10",N-,NW,,Vanderlip,Henry,farmhouse,road,,,,80,,"Vanderlip, Henry",East,"13",7.575,,,Top 50% of landowners by acreage
+"78","80","8","10",N-,SW,Merge with S-NW,Tranter,J.,,,,,,160,,"Tranter, J.",UK,"33",15.043,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"80","80","8","10",S-,SE,Merge with SWSE,Mahony,Jno.,farmhouse,orchard,road,,,120,,"Mahony, Jno.",East,"20",11.267,,,Top 50% of landowners by acreage
+"82","80","8","11",N-,NW,,Thomas,Charles,road,,,,,80,,"Thomas, Charles",Germanic,"7",7.544,,,Top 50% of landowners by acreage
+"83","80","8","11",N-,SW,Merge with SWNE,Oakes,Charles C,farmhouse,timber,,,,120,,"Oakes, Charles C",East,"124",11.307,,,Top 50% of landowners by acreage
+"85","80","8","11",S-,SW,1/2 of S-SW,Taylor,T.,road,timber,,,,40,,"Taylor, T.",UK,"15",3.774,,,
+"89","80","8","11",E-,NE,,Smith,A.P.,schoolhouse,road,,,,80,,"Smith, A.P.",Midwest,"84",7.569,,,Top 50% of landowners by acreage
+"90","80","8","11",SE,,"Labeled as ""Estate""",Gibbony,Robert A,timber,road,,,,160,,"Gibbony, Robert A",,,37.647,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"91","80","8","12",N-,NW,,Garitz,H.,,,,,,80,,"Garitz, H.",,,7.45,,,
+"92","80","8","12",N-,SW,,David,Rachael,road,,,,,80,,"David, Rachael",,,7.463,,,
+"93","80","8","12",E-,NW,"Approx. 3/4 of E-NW, Merge with SENW",McVean,P.,farmhouse,orchard,road,,,100,,"McVean, P.",,,9.177,,,Top 50% of landowners by acreage
+"94","80","8","12",E-,NE,Includes approx. 1/4 of E-NW,Gaheen,P.,farmhouse,road,,,,100,,"Gaheen, P.",,,13.224,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"98","80","8","12",SW,,,Myers,Daniel Jr.,farmhouse,timber,road,,,160,,"Myers, Daniel Jr.",East,"12",14.93,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"99","80","8","13",NE,,"labeled as ""Estate""",Gibbony,Robert A,road,,,,,160,,"Gibbony, Robert A",,,37.647,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"100","80","8","13",W-,NW,,Maher,Michael,road,,,,,80,,"Maher, Michael",South,"19",7.383,,,
+"101","80","8","13",E-,SE,,Fall,Patrick,farmhouse,,,,,80,,"Fall, Patrick",UK,"3",7.523,,,Top 50% of landowners by acreage
+"104","80","8","13",W-,SE,,Winder,,,,,,,80,,Winder,,,7.69,,,Top 50% of landowners by acreage
+"105","80","8","13",W-,SW,,Donahoe,,,,,,,80,,Donahoe,UK,"3",7.435,,,
+"106","80","8","14",E-,SE,,Baker,George W,,,,,,80,,"Baker, George W",Canada,"9",7.747,,,Top 50% of landowners by acreage
+"108","80","8","14",S-,SW,,Lyle,Mary J.,road,,,,,80,,"Lyle, Mary J.",UK,"6",7.55,,,Top 50% of landowners by acreage
+"109","80","8","14",SW,NW,Merge with NWSW,Rourk,Thomas,farmhouse,orchard,road,,,80,,"Rourk, Thomas",UK,"17",7.559,,,Top 50% of landowners by acreage
+"111","80","8","14",W-,NE,"Merge with SWNE, NENW",Mahoney,John,road,,,,,160,,"Mahoney, John",East,"162",16.871,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"113","80","8","14",N-,SE,Merge with SENW,Downey,D.,farmhouse,orchard,road,,,120,,"Downey, D.",UK,"13",11.275,,,Top 50% of landowners by acreage
+"114","80","8","15",NW,,,Saxon,W.,farmhouse,,,,,160,,"Saxon, W.",,,15.358,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"117","80","8","15",W-,SW,,Fitzgerald,Patrick,farmhouse,timber,road,,,80,,"Fitzgerald, Patrick",UK,"14",7.302,,,
+"120","80","8","16",SE,,Merge with N-SE,Combe,Thomas,farmhouse (2),schoolhouse,timber,road,,240,,"Combe, Thomas",UK,"16",22.658,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"121","80","8","16",S-,SW,,McCaddon,L.M.,road,,,,,80,,"McCaddon, L.M.",,,7.53,,,Top 50% of landowners by acreage
+"122","80","8","16",S-,NW,"creek is labelled ""Hartwell River""",Jacobs,Adam,timber,creek,road,,,80,,"Jacobs, Adam",Germanic,"1",18.922,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"123","80","8","8",E-,NE,"Merge with E-SE, sec8 1/2 of SESE",Bireline,Lewis,farmhouse,orchard,creek,timber,road,160,,"Bireline, Lewis",Midwest,"31",17.007,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"124","80","8","17",E-,NW,"Merge with E-SW, sec8 1/2 of SESW",Cotter,Thomas,farmhouse,orchard,timber,road,,180,,"Cotter, Thomas",East,"87",16.829,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"125","80","8","17",W-,NE,Merge with W-SE,Cotter,William H,road,,,,,180,,"Cotter, William H",East,"87",15.084,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"126","80","8","17",W-,SW,,Edwards,William,farmhouse,creek,railroad,,,80,,"Edwards, William",East,"163",7.488,,,
+"130","80","8","18",NE,SW,Merge with 1/2 of NESE,Donaldson,J.,timber,creek,railroad,,,60,,"Donaldson, J.",,,5.695,,,
+"133","80","8","18",NW,SE,"1/2 of NWSE; Merge with 1/2 of NWSW",Walters,D.B.,farmhouse,road,timber,,,40,,"Walters, D.B.",East,"30",3.793,,,
+"139","80","8","18",S-,NW,1/2 of S-NW,Wagner,Charles A,,,,,,40,,"Wagner, Charles A",Germanic,"116",3.993,,,
+"135","80","8","18",S-,NW,1/2 of S-NW,Wagner,P.,,,,,,40,,"Wagner, P.",Germanic,"116",3.792,,,
+"137","80","8","18",S-,SW,,Wagner,Karl A,farmhouse,,,,,80,,"Wagner, Karl A",Germanic,"116",7.871,,,Top 50% of landowners by acreage
+"147","80","8","19",NW,,,Carson,Lewis,creek,,,,,160,,"Carson, Lewis",,,16.111,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"150","80","8","20",W-,SE,,McFarland,A.L.,road,timber,,,,80,,"McFarland, A.L.",East,"3",7.52,,,Top 50% of landowners by acreage
+"151","80","8","20",W-,NE,,Floerchinger,Geroge,farmhouse,timber,creek,railroad,,80,,"Floerchinger, Geroge",Germanic,"139",7.54,,,Top 50% of landowners by acreage
+"152","80","8","20",N-,NE,,Daniels,Francis,creek,road,,,,80,,"Daniels, Francis",,,7.449,,,
+"156","80","8","20",E-,SW,,Linkhart,Jack,farmhouse,timber,road,,,80,,"Linkhart, Jack",East,"44",7.49,,,
+"158","80","8","21",NE,,"Merge with SE, SWSE, W-NE, NWNW",Durant,Thomas C,timber,creek,road,railroad,,440,,"Durant, Thomas C",,,61.262,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"160","80","8","21",S-,NW,,Wilcox,,creek,railroad,town,,,80,,Wilcox,South,"1",7.484,,,
+"162","80","8","22",NW,,,Landerbalk,Alfred,road,,,,,160,,"Landerbalk, Alfred",,,15.005,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"165","80","8","22",E-,SE,,Mahoney,Patrick,farmhouse,railroad,creek,timber,,80,,"Mahoney, Patrick",East,"162",7.488,,,
+"167","80","8","22",W-,SW,,Plympton,J.,road,railroad,,,,80,,"Plympton, J.",,,7.51,,,
+"168","80","8","23",S-,NW,"Merge with SWSW, NWSW",Williams,Peter,farmhouse,orchard,creek,road,railroad,160,,"Williams, Peter",Midwest,"96",14.969,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"172","80","8","23",SE,SW,"1/2 of SESW; Creek labeled ""Clear Creek""",Ra?,,creek,railroad,timber,,,20,,Ra?,,,1.72,,,
+"174","80","8","23",SE,NE,3/4 of SENE,Douglass,Fanny,road,,,,,30,,"Douglass, Fanny",Midwest,"71",9.481,,,Top 50% of landowners by acreage
+"175","80","8","23",E-,NE,Merge with 1/4 of SENE,Kirf,Dennis,farmhouse,road,,,,90,,"Kirf, Dennis",,,8.75,,,Top 50% of landowners by acreage
+"176","80","8","23",NE,SW,1/2 of NESW,Douglass,Fanny,,,,,,20,,"Douglass, Fanny",Midwest,"71",9.481,,,Top 50% of landowners by acreage
+"177","80","8","23",SE,NW,Merge with 1/2 of NESW,McGillicuddy,F.,farmhouse (2),road,,,,60,,"McGillicuddy, F.",,,10.394,,,Top 50% of landowners by acreage
+"180","80","8","23",NW,NW,1/2 of NWNW,Mahoney,John,farmhouse,road,,,,20,,"Mahoney, John",East,"162",16.871,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"181","80","8","23",NW,NE,Approx. 1/5 of NWNE,Lyle,Mary J,,,,,,8,,"Lyle, Mary J",UK,"6",0.884,,,
+"179","80","8","23",NW,NE,Merge with 1/2 of NWNW,Kennedy,Jno.,farmhouse,orchard,creek,,,60,,"Kennedy, Jno.",East,"53",4.733,,,
+"182","80","8","24",NW,,,Price,William,creek,,,,,160,,"Price, William",,,15.145,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"184","80","8","24",E-,NE,,Bond,A.J.,,,,,,80,,"Bond, A.J.",East,"2",11.365,,,Top 50% of landowners by acreage
+"186","80","8","24",SW,NW,Approx. 2/3 of SWNW,Douglass,William,farmhouse,creek,timber,road,,26.6,,"Douglass, William",Midwest,"71",2.806,,,
+"187","80","8","24",SW,SW,Merge with approx. 1/3 of SWNW,Douglass,Fanny,farmhouse,creek,timber,road,railroad,53.3,,"Douglass, Fanny",Midwest,"71",9.481,,,Top 50% of landowners by acreage
+"188","80","8","24",SE,,Merge with W-SE,Benton,Samuel A,farmhouse,timber,road,,,240,,"Benton, Samuel A",,,22.72,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"189","80","8","25",N-,NE,"Merge with S-NE, SENW",Hamilton,H.,farmhouse (2),orchard,creek,road,railway,200,timber,"Hamilton, H.",East,"34",18.97,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"192","80","8","25",S-,NW,"Merge with N-SW, NWNW",Ostericher,Fred,farmhouse,creek,timber,,,200,,"Ostericher, Fred",,,19.068,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"197","80","8","26",SW,NE,Merge with NWSE,Imeel,M.,,,,,,80,,"Imeel, M.",,,7.509,,,
+"198","80","8","26",SW,NW,Merge with NWSW,Barry,Jas.,,,,,,40,,"Barry, Jas.",UK,"93",7.5,,,
+"199","80","8","26",NE,SW,1/2 of NESW,Logan,L. Sr.,timber,,,,,20,,"Logan, L. Sr.",UK,"20",1.84,,,
+"201","80","8","26",NE,SE,Approx. 1/3 of NESE,W.A.D.,,timber,,,,,15,,W.A.D.,,,1.376,,,
+"202","80","8","26",NE,SE,1/3 of NESE,D.L.D.,,timber,,,,,13.3,,D.L.D.,,,1.072,,,
+"207","80","8","26",NW,NW,"1/3 of NWNW; creek labeled ""Clear Creek""",L.R.,,timber,creek,,,,13.3,,L.R.,,,1.425,,,
+"206","80","8","26",NW,NW,"1/3 of NWNW; creek labeled ""Clear Creek""",L.C.,,timber,creek,,,,13.3,,L.C.,,,1.161,,,
+"212","80","8","27",W-,SW,,Black,T.H.,,,,,,80,,"Black, T.H.",Midwest,"28",7.483,,,
+"216","80","8","28",NE,NE,"1/2 of NENE; creek labeled ""Clear Creek""",W.G.,,timber,creek,,,,20,,W.G.,,,1.789,,,
+"218","80","8","28",NE,NW,Merge with 1/2 of NWNE,Marvin,William E,farmhouse,orchard,creek,road,timber,60,,"Marvin, William E",Midwest,"48",9.361,,,Top 50% of landowners by acreage
+"219","80","8","28",NW,NW,Merge with 1/2 of NWNE,Ferguson,Charles,farmhouse,orchard,road,,,60,,"Ferguson, Charles",East,"8",5.668,,,
+"220","80","8","28",NE,SW,"Merge with SENW; creek labeled ""Clear Creek""",Emary,H.P.,farmhouse,road,creek,timber,,80,,"Emary, H.P.",,,7.633,,,Top 50% of landowners by acreage
+"221","80","8","28",NW,SE,"Merge with SWNE; creek labeled ""Clear Creek""",Dutch,F. & W.,farmhouse,creek,timber,,,80,,"Dutch, F. & W.",East,"9",7.464,,,
+"226","80","8","29",SE,NW,"Merge with NESW; creek labeled ""Clear Creek""",Smith,Jno.,farmhouse,timber,creek,road,,80,,"Smith, Jno.",Midwest,"84",11.257,,,Top 50% of landowners by acreage
+"228","80","8","29",S-,NW,,Lengle,Elias P,farmhouse,orchard,timber,creek,road,80,,"Lengle, Elias P",East,"10",7.47,,,
+"230","80","8","30",E-,SE,,Durant,T.C.,road,,,,,80,,"Durant, T.C.",,,7.512,,,
+"233","80","8","30",W-,SW,,Wagner,John,farmhouse,orchard,road,,,80,,"Wagner, John",Germanic,"116",9.205,,,Top 50% of landowners by acreage
+"234","80","8","30",SW,NE,Merge with SENW,Baker,John W,road,,,,,80,,"Baker, John W",Canada,"9",7.454,,,
+"235","80","8","30",N-,SW,"Merge with NWNE; creek labeled ""Clear Creek""",Eddy,William,creek,,,,,120,,"Eddy, William",East,"44",15.816,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"240","80","8","31",W-,NW,,Brick,Mary Jo.,road,,,,,80,,"Brick, Mary Jo.",East,"1",9,,,Top 50% of landowners by acreage
+"241","80","8","31",W-,NE,,Gard,J.D.,road,,,,,80,,"Gard, J.D.",,,7.481,,,
+"242","80","8","31",NE,,,Edwards,John,farmhouse,road,,,,160,,"Edwards, John",East,"163",15.026,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"243","80","8","31",SW,,,Durant,Thomas C,road,,,,,160,,"Durant, Thomas C",,,61.262,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"246","80","8","32",W-,NE,,Floerchinger,C.C.,farmhouse,orchard,road,,,80,,"Floerchinger, C.C.",Germanic,"139",7.464,,,
+"248","80","8","32",SE,,,McCandless,William,farmhouse,timber,road,,,160,,"McCandless, William",East,"7",15.07,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"249","80","8","32",NE,,,Klenk,M. & A.,farmhouse,timber,road,,,160,,"Klenk, M. & A.",Germanic,"87",15.025,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"253","80","8","33",N-,SW,"Merge with SWNW, NESW",Luse,S.,farmhouse,timber,road,,,160,,"Luse, S.",East,"26",15.072,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"256","80","8","33",SW,NE,Merge with SENW,Cox,M.,timber,road,,,,80,,"Cox, M.",UK,"33",7.533,,,Top 50% of landowners by acreage
+"257","80","8","33",S-,SE,Merge with SENE,Yenter,C.,timber,road,,,,120,,"Yenter, C.",Germanic,"141",11.073,,,Top 50% of landowners by acreage
+"260","80","8","34",W-,SW,,Church,Samuel,farmhouse,timber,road,,,80,,"Church, Samuel",East,"12",7.755,,,Top 50% of landowners by acreage
+"261","80","8","34",W-,SE,,Clensman,A.R.,farmhouse,timber,road,,,80,,"Clensman, A.R.",,,7.32,,,
+"262","80","8","34",S-,SE,,Doty,Jno.,farmhouse,orchard,road,,,80,,"Doty, Jno.",Midwest,"117",7.57,,,Top 50% of landowners by acreage
+"263","80","8","34",N-,SE,Merge with S-NE,Ives,Warren,farmhouse,orchard,road,,,160,,"Ives, Warren",East,"46",15.04,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"264","80","8","34",NW,NE,Merge with NENW,Emmery,Silas,,,,,,80,,"Emmery, Silas",,,7.551,,,Top 50% of landowners by acreage
+"269","80","8","35",E-,NW,,Ward,Francis,road,,,,,80,,"Ward, Francis",UK,"56",7.505,,,
+"270","80","8","35",W-,SW,,Wentz,D.,farmhouse,road,,,,80,,"Wentz, D.",Germanic,"10",7.51,,,
+"271","80","8","35",W-,SE,,Geigenheimer,C.,farmhouse,orchard,,,,80,,"Geigenheimer, C.",Germanic,"2",7.475,,,
+"272","80","8","35",SE,,,Luse,Stephen,farmhouse,timber,,,,160,,"Luse, Stephen",East,"26",15.105,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"275","80","8","36",SW,,,Lucas,E.W.,farmhouse,timber,,,,160,,"Lucas, E.W.",Midwest,"1",14.99,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"276","80","8","36",S-,SE,,Gilroy,P.,creek,,,,,80,,"Gilroy, P.",UK,"66",7.808,,,Top 50% of landowners by acreage
+"277","80","8","36",E-,NE,Merge with S-NE,Gilroy,M.,farmhouse,timber,creek,,,160,,"Gilroy, M.",UK,"66",15.572,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"281","81","8","31",SW,NW,"Merge with NWSW; Iowa River",Amana Society,,river,,,,,80,,Amana Society,,,24.215,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"282","81","8","31",SW,NE,"Merge with NWSE; Iowa River",Goben,Hughe,river,,,,,80,,"Goben, Hughe",UK,"11",7.669,,,Top 50% of landowners by acreage
+"283","81","8","31",NE,,Iowa River,Amana Society,,river,,,,,160,,Amana Society,,,24.215,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"286","81","8","32",SW,SE,,Delaney,Jno.,farmhouse,road,,,,80,,"Delaney, Jno.",UK,"39",7.363,,,
+"288","81","8","32",S-,NE,Merge with SESE,Foley,Thomas,farmhouse,,,,,120,,"Foley, Thomas",,,11.413,,,Top 50% of landowners by acreage
+"289","81","8","32",NW,,Merge with SWNE,Clark,E.,,,,,,200,,"Clark, E.",East,"34",18.815,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"290","81","8","32",N-,SE,Merge with NENW,Conner,William,pond,,,,,120,,"Conner, William",UK,"10",11.541,,,Top 50% of landowners by acreage
+"293","81","8","29",SW,SW,1/3 of SWSW,T.C.,,timber,,,,,13.3,,T.C.,,,1.323,,,
+"294","81","8","29",SW,SW,1/3 of SWSW,J.M.,,timber,,,,,13.3,,J.M.,,,1.184,,,
+"297","81","8","29",SW,NW,"1/3 of SWNW; Iowa River",J.D.,,timber,river,,,,13.3,,J.D.,,,2.535,,,
+"295","81","8","29",SW,NW,1/3 of SWNW,E.E.W.,,timber,,,,,13.3,,E.E.W.,,,1.252,,,
+"303","81","8","28",W-,SE,Iowa River,M.H.H. & Co.,,timber,creek,river,,,80,,M.H.H. & Co.,,,7.613,,,Top 50% of landowners by acreage
+"305","81","8","33",N-,SW,,Hilborn,M.A.,farmhouse,road,,,,80,,"Hilborn, M.A.",East,"10",7.589,,,Top 50% of landowners by acreage
+"311","81","8","33",N-,NE,"Merge with NESE; Iowa River",J.N.,,pond,timber,river,,,120,,J.N.,,,11.448,,,Top 50% of landowners by acreage
+"312","81","8","34",NW,,Iowa River,Mastern,John M,timber,road,pond,river,,160,,"Mastern, John M",,,15.069,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"320","81","8","35",SW,NW,"Merge with NWSW; Iowa River",Barnes,W.F.,farmhouse,pond,creek,river,,80,,"Barnes, W.F.",UK,"62",14.92,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"321","81","8","35",S-,SW,,Hughes,Frank,,,,,,80,,"Hughes, Frank",UK,"74",7.526,,,Top 50% of landowners by acreage
+"327","81","8","36",W-,SE,,Kadera,A.,farmhouse,road,,,,80,,"Kadera, A.",UK,"93",7.503,,,
+"328","81","8","36",S-,SE,,Hamilton,Moses,,,,,,80,,"Hamilton, Moses",East,"34",7.352,,,
+"331","81","8","36",NE,,Iowa River,Cox,Thomas J,river,,,,,280,,"Cox, Thomas J",UK,"33",26.58,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"332","80","8","18",SE,NW,,S.S.,,orchard,timber,road,,,40,,S.S.,,,3.731,,,
+"17","80","8","2",SE,SW,Merge with sec11 NENW,Clodfelter,D.,farmhouse,timber,road,,,80,,"Clodfelter, D.",South,"12",7.498,,,
+"41","80","8","5",NW,NW,Merge with T81R8sec32 SWSW,Donahoe,J.,farmhouse,road,,,,80,,"Donahoe, J.",UK,"3",7.734,,,Top 50% of landowners by acreage
+"43","80","8","6",N-,NW,Merge with T81R8sec31 S-SW,Brennan,Jno.,timber,road,,,,160,,"Brennan, Jno.",East,"29",14.814,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"47","80","8","6",SW,SW,Merge with sec7 1/2 of NWNW,Donhan,D.G.,farmhouse,road,,,,60,,"Donhan, D.G.",,,5.685,,,
+"55","80","8","7",W-,SW,Merge with sec18 NWNW,Hutt,John,timber,creek,railroad,road,,120,,"Hutt, John",Germanic,"16",11.43,,,Top 50% of landowners by acreage
+"56","80","8","7",E-,SW,"Merge with sec18 N-NE, sec18 NWNE",Cook,John,farmhouse,orchard,timber,railroad,creek,280,,"Cook, John",Midwest,"89",26.596,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"75","80","8","9",S-,SE,"Merge with SWSE, sec16 N-NE, sec16 NWNE; creek named ""Hartwell River""",Hartwell,J.L.,farmhouse,orchard,creek,road,timber,240,,"Hartwell, J.L.",Canada,"11",26.31,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"81","80","8","10",S-,NE,"Merge with N-SE, NENE, sec11 SWNW",Cooke,Jay,road,,,,,240,,"Cooke, Jay",,,22.59,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"86","80","8","11",S-,SW,"1/2 of S-SW, Merge with sec14 NWNW",Crossen,J.,farmhouse,timber,road,,,80,,"Crossen, J.",UK,"2",7.47,,,
+"103","80","8","13",SE,SW,Merge with sec24 NENW,Sheen,T.,farmhouse,timber,,,,80,,"Sheen, T.",,,7.467,,,
+"107","80","8","14",SE,SW,Merge with sec23 NENW,Conners,Patrick,,,,,,80,,"Conners, Patrick",UK,"1",7.403,,,
+"118","80","8","15",SE,,Merge with sec22 N-NE,Stratton,James,farmhouse,orchard,creek,road (2),,400,,"Stratton, James",UK,"55",37.521,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"136","80","8","17",NW,SW,Merge with sec18 1/2 of NESE,Maetter,A.,farmhouse,creek,railroad,,,60,,"Maetter, A.",,,5.698,,,
+"138","80","8","18",SE,SW,Merge with sec19 NENW,Renz,B.,farmhouse,road,,,,80,,"Renz, B.",,,11.175,,,Top 50% of landowners by acreage
+"144","80","8","19",S-,NE,"Merge with N-SE, sec20 W-NW",Floerchinger,Jacob,farmhouse,orchard,timber,creek,schoolhouse,240,road,"Floerchinger, Jacob",Germanic,"139",33.941,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"145","80","8","19",SE,SE,Merge with sec20 SWSW,Eddy,B.,farmhouse,orchard,timber,creek,road,80,,"Eddy, B.",East,"44",11.205,,,Top 50% of landowners by acreage
+"154","80","8","20",N-,SE,Merge with sec21 NWSW,Wilcox,C.S.,creek,road,railroad,town,,120,,"Wilcox, C.S.",South,"1",11.256,,,Top 50% of landowners by acreage
+"157","80","8","20",E-,SE,Merge with sec21 SWSW,McDonough,Michael,farmhouse,creek,road,timber,,120,,"McDonough, Michael",UK,"25",11.248,,,Top 50% of landowners by acreage
+"166","80","8","22",W-,SE,"Merge with E-SW, NESW, sec27 NW, sec27 E-NW; Creek labeled ""Clear Creek""",Scott,John,farmhouse (2),orchard,railroad,creek,timber,440,,"Scott, John",Midwest,"17",43.343,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"173","80","8","23",SE,SE,Merge with sec26 E-NE,Douglass,D.A.,creek,railroad,timber,,,93.3,,"Douglass, D.A.",Midwest,"71",8.706,,,Top 50% of landowners by acreage
+"193","80","8","25",S-,SW,"Merge with SESW, sec26 SE, sec36 E-NW, sec36 W-NE, sec36 E-NW",Elliott,& Weir,creek,road,,,,440,,"Elliott, & Weir",UK,"19",67.393,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"195","80","8","26",SW,SE,"Merge with sec35 W-NE, sec35 NWSW",Logan,L.,road,,,,,160,,"Logan, L.",UK,"20",15.021,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"196","80","8","26",SW,SW,Merge with sec35 NWNW,Wesiner,J.,road,,,,,80,,"Wesiner, J.",,,7.495,,,
+"213","80","8","27",SE,,"Merge with W-SE, sec34 NENE",Elliott,& Weir,road,,,,,280,,"Elliott, & Weir",UK,"19",67.393,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"214","80","8","28",E-,SE,"Merge with SESW, sec33 N-NE",Howard,B.,farmhouse (2),timber,road,,,200,,"Howard, B.",N. Europe,"20",18.836,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"222","80","8","28",SW,SE,Merge with sec33 NWNE,Remley,H.M.,timber,,,,,80,,"Remley, H.M.",East,"17",7.499,,,
+"227","80","8","29",NW,,"Merge with NENW, sec30 E-NE; creek labeled ""Clear Creek""",Sies,W.F.,farmhouse,orchard,creek,timber,road,280,,"Sies, W.F.",Germanic,"57",26.321,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"229","80","8","29",SW,SW,Merge with sec32 W-NW,Floerchinger,Jacob,road,,,,,120,,"Floerchinger, Jacob",Germanic,"139",33.941,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"140","80","8","19",SW,,Merge with sec30 NWNW,Mechler,August,farmhouse,orchard,timber,,,200,,"Mechler, August",UK,"14",20.793,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"244","80","8","31",SE,,Merge with sec32 SW,Baum,Napoleon,road,,,,,320,,"Baum, Napoleon",Midwest,"9",30.774,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"223","80","8","28",W-,SW,"Merge with NWSW, sec29 E-SE, sec29 NESE, sec33 NWNW; creek labeled ""Clear Creek""",Remley,James,farmhouse,schoolhouse,creek,timber,road,280,,"Remley, James",East,"17",26.237,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"258","80","8","33",NE,SE,Merge with sec34 N-SW,Yenter,Casper,farmhouse,timber,road,,,120,,"Yenter, Casper",Germanic,"141",11.212,,,Top 50% of landowners by acreage
+"273","80","8","35",E-,NE,Merge with sec36 W-NW,Logan,"Lewis, Jr.",road,creek,,,,160,,"Logan, Lewis, Jr.",UK,"20",15.027,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"280","81","8","31",SE,,Merge with sec32 SWNW,Mahoney,J.,farmhouse,timber,road,,,200,,"Mahoney, J.",East,"162",18.862,,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"291","81","8","32",NE,NE,Merge with sec33 N-NW,Hayes,John,farmhouse,creek,pond,road,,120,,"Hayes, John",UK,"10",11.517,,,Top 50% of landowners by acreage
+"310","81","8","33",SE,,"Merge with NESW, sec34 SWNW",English,F.N.,farmhouse,road,pond,,,240,,"English, F.N.",East,"4",22.541,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"19","80","8","3",NE,NE,"Merge with T81R8sec34 W-SE, S-SE, SENE; Additional name A.B. Blakely",Adams,A.,pond,road,creek,,,40,,"Adams, A.",,,22.409,Top 10% of landowners by acreage,Top 25% of landowners by acreage,Top 50% of landowners by acreage
+"325","81","8","35",SE,NE,Merge with sec36 W-SW,Ewing,Thomas,farmhouse,pond,creek,road,,120,,"Ewing, Thomas",,,11.247,,,Top 50% of landowners by acreage
+"324","81","8","35",E-,NE,"Merge with sec36 N-SW; Iowa River",Henderson,C.,pond,river,,,,200,,"Henderson, C.",Midwest,"87",18.496,,Top 25% of landowners by acreage,Top 50% of landowners by acreage

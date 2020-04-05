@@ -63,7 +63,7 @@
     h3 {
       font-family: 'Quattrocento', serif;
       font-size: 8px;
-      display: block;
+      display: inline-block;
       margin-top: 0.0em;
       margin-bottom: 0.0em;
       margin-left: 0;
@@ -108,13 +108,37 @@
     .leaflet-touch .leaflet-bar a {
       background-color: #f2eecb;
     }
+
+    .legend {
+      background-color: #f2eecb;
+      border-radius: 3px;
+      bottom: 30px;
+      width: 150px;
+      box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+      font: 12px/20px 'Quattrocento', 'Quattrocento', 'Quattrocento', serif;
+      padding: 10px;
+      position: absolute;
+      right: 10px;
+      z-index: 1;
+      line-height: 18px;
+      color: #555;
+    }
+
+    .legend i {
+      width: 10px;
+      height: 10px;
+      float: left;
+      margin-right: 15px;
+      margin-top: 4px;
+      opacity: 0.7;
+    }
   </style>
 </head>
 
 <body>
   <header>
     <h1>Oxford, Iowa: 1870</h1><br>
-    <h2>Map by Jay Bowen, University of Iowa Digital Scholarship and Publishing Studio, 2020</h2>
+    <h2>Map by Jay Bowen, University of Iowa Digital Scholarship & Publishing Studio, 2020</h2>
   </header>
 
   <!-- map -->
@@ -155,7 +179,7 @@
 
     // add a scale bar
     L.control.scale({
-      position: 'bottomright'
+      position: 'bottomleft'
     }).addTo(map);
 
     // Add a function to style the polygons by values
@@ -164,7 +188,7 @@
         d === "E. Europe" ? '#e3e600' :
         d === "East" ? '#0e4bef' :
         d === "Germanic" ? '#8954c0' :
-        d === "Iowa" ? 'tan' :
+        d === "Iowa" ? 'black' :
         d === "Midwest" ? '#58bb8e' :
         d === "South" ? '#00a6d6' :
         d === "UK" ? '#cd89ab' :
@@ -273,6 +297,31 @@
       L.control.layers(baseMaps, overlays, {
         collapsed: false,
       }).addTo(map);
+
+      // create legend for the family origins
+      var originLegend = L.control({
+        position: 'bottomright'
+      });
+
+      // add content to the legend
+      originLegend.onAdd = function(map) {
+
+        var div = L.DomUtil.create('div', 'info legend'),
+          grades = ['Canada', 'E. Europe', 'East', 'Germanic', 'Iowa', 'Midwest', 'South', 'UK', 'N. Europe', 'No Data'],
+          labels = ["<h3 style='font-size:14px; font-weight:bold'>Family Origins</h3>"];
+
+        // loop through our origins and generate a label with a colored square for each
+        for (var i = 0; i < grades.length; i++) {
+          div.innerHTML +=
+            labels.push('<i style="background:' + getColorOrigin(grades[i]) + '"></i> ' +
+              (grades[i]));
+        }
+        div.innerHTML = labels.join('<br>');
+        return div;
+      };
+
+      // add this legend to the map, because this legend is on by default
+      originLegend.addTo(map);
 
     }; // end drawMap function
 
