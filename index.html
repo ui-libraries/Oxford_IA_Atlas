@@ -138,7 +138,7 @@
 <body>
   <header>
     <h1>Oxford, Iowa: 1870</h1><br>
-    <h2>Map by Jay Bowen, University of Iowa Digital Scholarship & Publishing Studio, 2020</h2>
+    <h2>Data and Research by Matthew Noellert, PhD; Map by Jay Bowen, University of Iowa, 2020</h2>
   </header>
 
   <!-- map -->
@@ -186,11 +186,11 @@
     function getColorOrigin(d) {
       return d === "Canada" ? '#a42c31' :
         d === "E. Europe" ? '#e3e600' :
-        d === "East" ? '#0e4bef' :
+        d === "Northeastern US" ? '#0e4bef' :
         d === "Germanic" ? '#8954c0' :
-        d === "Iowa" ? 'black' :
-        d === "Midwest" ? '#58bb8e' :
-        d === "South" ? '#00a6d6' :
+        d === "Iowa" ? 'orange' :
+        d === "Midwestern US" ? '#58bb8e' :
+        d === "Southern US" ? '#00a6d6' :
         d === "UK" ? '#cd89ab' :
         d === "N. Europe" ? '#81de5f' :
         d === "No Data" ? 'gray' :
@@ -231,7 +231,7 @@
 
         onEachFeature: function(feature, layer) {
           // bind a popup window
-          layer.bindPopup('<h3>' + feature.properties.surname + ', ' + feature.properties.firstname + '<br>' + 'Family Origin: ' + feature.properties.dta_fam_region + '</h3>');
+          layer.bindPopup('<h3>' + feature.properties.full_name + '<br>' + 'Family Origin: ' + feature.properties.dta_fam_region + '<br>' + 'Total Acres Owned: ' + feature.properties.acres_by_landowner + '</h3>');
           // change layer style on mouseover
           layer.on("mouseover", function(e) {
             layer.setStyle({
@@ -250,7 +250,7 @@
       }).addTo(map); // add the layer to the map
 
       L.control.tagFilterButton({
-          data: ['Canada', 'E. Europe', 'East', 'Germanic', 'Iowa', 'Midwest', 'South', 'UK', 'N. Europe', 'No Data'],
+          data: ['Canada', 'E. Europe', 'Northeastern US', 'Germanic', 'Iowa', 'Midwestern US', 'Southern US', 'UK', 'N. Europe', 'No Data'],
           icon: '<i class="fas fa-globe" style="font-size:18px; padding-top: 6px;"></i>',
           filterOnEveryClick: true
       }).addTo(map);
@@ -307,7 +307,7 @@
       originLegend.onAdd = function(map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-          grades = ['Canada', 'E. Europe', 'East', 'Germanic', 'Iowa', 'Midwest', 'South', 'UK', 'N. Europe', 'No Data'],
+          grades = ['Canada', 'E. Europe', 'Northeastern US', 'Germanic', 'Iowa', 'Midwestern US', 'Southern US', 'UK', 'N. Europe', 'No Data'],
           labels = ["<h3 style='font-size:14px; font-weight:bold'>Family Origins</h3>"];
 
         // loop through our origins and generate a label with a colored square for each
