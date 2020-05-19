@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="src/leaflet-tag-filter-button.css">
   <link rel="stylesheet" href="src/easy-button.css">
 
+  <!--for styled layer control-->
+  <link rel="stylesheet" href="css/styledLayerControl.css" />
+
   <style type="text/css">
     <style>body {
       margin: 0px;
@@ -40,7 +43,7 @@
       font-family: 'Quattrocento', serif;
       font-size: 40px;
       display: inline-block;
-      color: #f2eecb;
+      color: white;
       margin-top: 0.5em;
       margin-bottom: 0.0em;
       margin-left: 0.5em;
@@ -52,7 +55,7 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 15px;
       display: inline-block;
-      color: #f2eecb;
+      color: white;
       margin-top: 0.5em;
       margin-bottom: 0.0em;
       margin-left: 1.5em;
@@ -62,7 +65,18 @@
 
     h3 {
       font-family: 'Quattrocento', serif;
-      font-size: 8px;
+      font-size: 12px;
+      display: inline-block;
+      margin-top: 0.0em;
+      margin-bottom: 0.0em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-family: 'Quattrocento', serif;
+      font-size: 12px;
       display: inline-block;
       margin-top: 0.0em;
       margin-bottom: 0.0em;
@@ -81,12 +95,12 @@
 
     /* Set background colors for popup windows */
     .leaflet-popup-content-wrapper {
-      background-color: #f2eecb;
+      background-color: white;
     }
 
     .leaflet-popup-tip {
       /*display: none;*/
-      border-top:10px solid #f2eecb;
+      border-top:10px solid white;
     }
 
     /* Set background color of layer control */
@@ -94,7 +108,7 @@
       font-family: 'Quattrocento', serif;
       font-size: 15px;
       display: inline-block;
-      background-color: #f2eecb;
+      background-color: white;
     }
 
     .easy-button-button {
@@ -106,14 +120,14 @@
     }
 
     .leaflet-touch .leaflet-bar a {
-      background-color: #f2eecb;
+      background-color: white;
     }
 
     .legend {
-      background-color: #f2eecb;
+      background-color: white;
       border-radius: 3px;
       bottom: 30px;
-      width: 150px;
+      width: 175px;
       box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
       font: 12px/20px 'Quattrocento', 'Quattrocento', 'Quattrocento', serif;
       padding: 10px;
@@ -132,13 +146,32 @@
       margin-top: 4px;
       opacity: 0.7;
     }
+
+    /* leaflet layers control plugin css */
+    .leaflet-control-layers-group-name{font-weight:700;margin-bottom:.2em;margin-left:3px}.leaflet-control-layers-group{margin-bottom:.5em}
+
+    .leaflet-control-layers .leaflet-control-layers-group-label{padding-left:20px;display:block}
+    .leaflet-control-layers label{padding-left:40px;padding-right:10px;display:none;}
+    .leaflet-control-layers label.trigger{
+      position:absolute;
+      left:0;
+      padding:0;
+      margin:0;
+      display:block;
+      cursor:pointer;
+    }
+    .leaflet-control-layers label.trigger:before{content:"▶";font-weight:normal;}
+    .leaflet-control-layers .trigger-radio:checked ~ label.trigger:before{content:"▼"}
+
+    .leaflet-control-layers .trigger-radio{display:none;}
+    .leaflet-control-layers .trigger-radio:checked ~ label{display:block;}
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Oxford, Iowa: 1870</h1><br>
-    <h2>Data and Research by Matthew Noellert, PhD | Map by Jay Bowen | University of Iowa Digital Scholarship & Publishing Studio, 2020</h2>
+    <h1>Land Ownership in Oxford, Iowa: 1859 - 1953</h1><br>
+    <h2>Data and Research by Matthew Noellert, PhD, et al. | University of Iowa Digital Scholarship & Publishing Studio, 2020</h2>
   </header>
 
   <!-- map -->
@@ -155,26 +188,38 @@
   <script src="src/easy-button.js"></script>
   <script src="src/leaflet-tag-filter-button.js"></script>
 
+  <!--for styled layer control-->
+  <script src="src/styledLayerControl.js"></script>
+
   <script>
+/*
     // add mapbox tiles
     L.mapbox.accessToken = 'pk.eyJ1IjoiamVib3dlMyIsImEiOiJjajY1M3l6bWIxeTQwMndtcXRuN3F4ejFpIn0.aE7P49pqaBKjy2HTOw-tgw'; // enter Mapbox access token
 
     var basemap = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzc5x7100a1jp70zpxcxap');
-    /*
+
+    var overmap1 = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzi05u17851ip494ycaerz');
+*/
+
+    var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    	subdomains: 'abcd',
+    	maxZoom: 16,
+      minZoom: 7,
+    });
+/*
         // define the basemap using the thunderforest pioneer map and set minimum and maximum zoom levels
-        var basemap = L.tileLayer('https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=dd2dca516d114fd89c0b1403358cbfa8', {
+        var Thunderforest = L.tileLayer('https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=dd2dca516d114fd89c0b1403358cbfa8', {
           attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           apikey: '<dd2dca516d114fd89c0b1403358cbfa8>',
           maxZoom: 16,
           minZoom: 7,
         });
-    */
-    var overmap1 = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzi05u17851ip494ycaerz');
-
+*/
     // center map on Iowa coordinates and set initial zoom
     var map = L.map('map', {
       maxBounds: L.latLngBounds([44, -88.0], [40.0, -99.0]),
-      layers: [basemap, overmap1]
+      layers: CartoDB_Positron,
     }).setView([41.742764, -91.768114], 12);
 
     // add a scale bar
@@ -182,56 +227,83 @@
       position: 'bottomleft'
     }).addTo(map);
 
-    // Add a function to style the polygons by values
+    // Add a function to style the polygons by ownership type
+    function getColorType(d) {
+      return d === "Absentee" ? 'red' :
+        d === "Resident" ? 'blue' :
+        d === "Corporation" ? 'yellow' :
+        'rgba(0,0,0,0.0)';
+    };
+
+    // Add a function to style the polygons by family origins
     function getColorOrigin(d) {
-      return d === "Canada" ? '#a42c31' :
-        d === "E. Europe" ? '#e3e600' :
-        d === "Northeastern US" ? '#0e4bef' :
-        d === "Germanic" ? '#8954c0' :
+      return d === "Austria-Hungary-Czech" ? '#e3e600' :
+        d === "Eastern U.S." ? '#0e4bef' :
+        d === "Germany" ? '#8954c0' :
         d === "Iowa" ? 'orange' :
-        d === "Midwestern US" ? '#58bb8e' :
-        d === "Southern US" ? '#00a6d6' :
+        d === "Ireland" ? '#58bb8e' :
+        d === "Midwest U.S." ? '#00a6d6' :
         d === "UK" ? '#cd89ab' :
-        d === "N. Europe" ? '#81de5f' :
-        d === "No Data" ? 'gray' :
+        d === "Other" ? 'gray' :
         'rgba(0,0,0,0.0)'; // supported by Microsoft Edge?
       //'#1C00ff00';
     };
 
+    // Add a function to style the polygons by ownership percentile
+    function getColorWealth(d) {
+      return d === "Top 10%" ? '#31a354' :
+        d === "Middle 40%" ? '#addd8e' :
+        d === "Bottom 50%" ? '#f7fcb9' :
+      'rgba(0,0,0,0.0)';
+    };
+
     // load the data asynchronously
     d3.queue()
-      .defer(d3.json, 'data/Oxford_Land_Master_1870.geojson')
+      .defer(d3.json, 'data/Oxford_1859.geojson')
+      .defer(d3.json, 'data/Oxford_1870.geojson')
+      .defer(d3.json, 'data/Oxford_1889.geojson')
+      .defer(d3.json, 'data/Oxford_1900.geojson')
+      .defer(d3.json, 'data/Oxford_1917.geojson')
+      .defer(d3.json, 'data/Oxford_1934.geojson')
+      .defer(d3.json, 'data/Oxford_1939.geojson')
+      .defer(d3.json, 'data/Oxford_1948.geojson')
+      .defer(d3.json, 'data/Oxford_1953.geojson')
       .await(drawMap);
 
     // define drawMap function
-    function drawMap(err, oxfordLots1870) {
+    function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917, oxford1934, oxford1939, oxford1948, oxford1953) {
 
-      var oxfordPlots1870 = L.geoJson(oxfordLots1870, {
+      var oxfordLots1859 = L.geoJson(oxford1859, {
 
         // style the layer
         style: function(feature) {
 
-          var tags = [];
-          tags.push(feature.properties.dta_fam_region);
-          tags.push('Owner: ' + feature.properties.surname);
-          tags.push(feature.properties.top_ten_perc);
-          tags.push(feature.properties.top_twentyfive_perc);
-          tags.push(feature.properties.top_fifty_perc);
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
 
           return {
             stroke: 1,
             color: 'grey',
             strokeOpacity: 1,
             weight: 1,
-            fillColor: getColorOrigin(feature.properties.dta_fam_region),
+            fillColor: '#cd89ab',
             fillOpacity: 0.5,
-            tags: tags //define the tags with the tags array
+            //tags: tags //define the tags with the tags array
           };
         },
 
         onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
           // bind a popup window
-          layer.bindPopup('<h3>' + feature.properties.full_name + '<br>' + 'Family Origin: ' + feature.properties.dta_fam_region + '<br>' + 'Total Acres Owned: ' + feature.properties.acres_by_landowner + '</h3>');
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
           // change layer style on mouseover
           layer.on("mouseover", function(e) {
             layer.setStyle({
@@ -242,13 +314,1585 @@
           });
           // reset style on mouseout
           layer.on("mouseout", function(e) {
-            oxfordPlots1870.resetStyle(e.target);
+            oxfordLots1859.resetStyle(e.target);
           });
 
         }
 
       }).addTo(map); // add the layer to the map
 
+      var oxfordTypes1859 = L.geoJson(oxford1859, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1859.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1859 = L.geoJson(oxford1859, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1859.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1859 = L.geoJson(oxford1859, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1859.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1870 = L.geoJson(oxford1870, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1870.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1870 = L.geoJson(oxford1870, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1870.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1870 = L.geoJson(oxford1870, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1870.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1870 = L.geoJson(oxford1870, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1870.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1889 = L.geoJson(oxford1889, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1889.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1889 = L.geoJson(oxford1889, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1889.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1889 = L.geoJson(oxford1889, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1889.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1889 = L.geoJson(oxford1889, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1889.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1900 = L.geoJson(oxford1900, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1900.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1900 = L.geoJson(oxford1900, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1900.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1900 = L.geoJson(oxford1900, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1900.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1900 = L.geoJson(oxford1900, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1900.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1917 = L.geoJson(oxford1917, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1917.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1917 = L.geoJson(oxford1917, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1917.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1917 = L.geoJson(oxford1917, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1917.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1917 = L.geoJson(oxford1917, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1917.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1934 = L.geoJson(oxford1934, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1934.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1934 = L.geoJson(oxford1934, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1934.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1934 = L.geoJson(oxford1934, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1934.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1934 = L.geoJson(oxford1934, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1934.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1939 = L.geoJson(oxford1939, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1939.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1939 = L.geoJson(oxford1939, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1939.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1939 = L.geoJson(oxford1939, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1939.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1939 = L.geoJson(oxford1939, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1939.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1948 = L.geoJson(oxford1948, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1948.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1948 = L.geoJson(oxford1948, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1948.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1948 = L.geoJson(oxford1948, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1948.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1948 = L.geoJson(oxford1948, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1948.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordLots1953 = L.geoJson(oxford1953, {
+
+        // style the layer
+        style: function(feature) {
+
+          //var tags = [];
+          //tags.push('Owner: ' + feature.properties.surname);
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: '#cd89ab',
+            fillOpacity: 0.5,
+            //tags: tags //define the tags with the tags array
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordLots1953.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordTypes1953 = L.geoJson(oxford1953, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorType(feature.properties.owntype),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordTypes1953.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordOrigins1953 = L.geoJson(oxford1953, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorOrigin(feature.properties.fam_origin),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordOrigins1953.resetStyle(e.target);
+          });
+
+        }
+
+      });
+
+      var oxfordWealth1953 = L.geoJson(oxford1953, {
+
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 1,
+            color: 'grey',
+            strokeOpacity: 1,
+            weight: 1,
+            fillColor: getColorWealth(feature.properties.wealth_percentile),
+            fillOpacity: 0.5,
+          };
+        },
+
+        onEachFeature: function(feature, layer) {
+
+          var firstname = feature.properties.firstname;
+
+          var name = firstname + " ";
+
+          if (firstname == null) {
+            var name = "";
+          }
+
+          // bind a popup window
+          layer.bindPopup('<h3>' + name + feature.properties.surname + ', ' + feature.properties.year + '</h3><br><h4>Ownership Type: ' + feature.properties.owntype + '<br>Family Origin: ' + feature.properties.fam_origin + '<br>' + feature.properties.wealth_percentile + ' of landowners by acreage' + '<br>Acres: ' + feature.properties.acres + '</h4>');
+          // change layer style on mouseover
+          layer.on("mouseover", function(e) {
+            layer.setStyle({
+              color: 'yellow',
+              weight: 3,
+              opacity: 1,
+            }).bringToFront();
+          });
+          // reset style on mouseout
+          layer.on("mouseout", function(e) {
+            oxfordWealth1953.resetStyle(e.target);
+          });
+
+        }
+
+      });
+/*
       L.control.tagFilterButton({
           data: ['Canada', 'E. Europe', 'Northeastern US', 'Germanic', 'Iowa', 'Midwestern US', 'Southern US', 'UK', 'N. Europe', 'No Data'],
           icon: '<i class="fas fa-globe" style="font-size:18px; padding-top: 6px;"></i>',
@@ -285,29 +1929,177 @@
       });
 
       var baseMaps = {
-        "Contemporary": basemap,
-        "1870 Map": overmap1
+        "Property Boundaries, 1859": oxfordLots1859,
+        "Landowner Type, 1859": oxfordTypes1859,
+        "Family Origins, 1859": oxfordOrigins1859,
+        "Ownership Percentile, 1859": oxfordWealth1859,
       };
 
       var overlays = {
-        "Lots, 1870": oxfordPlots1870,
+        //"Family Origins, 1859": oxfordOrigins1859,
       }
 
       // all done with the layers, add them to layer control
       L.control.layers(baseMaps, overlays, {
-        collapsed: false,
+        collapsed: true,
       }).addTo(map);
+*/
+
+      var baseMaps = [
+			  {
+					groupName : "1859",
+					expanded : false,
+					layers : {
+            "Property Boundaries": oxfordLots1859,
+            "Landowner Type": oxfordTypes1859,
+            "Family Origins": oxfordOrigins1859,
+            "Ownership Percentile": oxfordWealth1859
+					}
+				},
+        {
+					groupName : "1870",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1870,
+            "Landowner Type": oxfordTypes1870,
+            "Family Origins": oxfordOrigins1870,
+            "Ownership Percentile": oxfordWealth1870
+  				}
+        },
+        {
+					groupName : "1889",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1889,
+            "Landowner Type": oxfordTypes1889,
+            "Family Origins": oxfordOrigins1889,
+            "Ownership Percentile": oxfordWealth1889
+  				}
+        },
+        {
+					groupName : "1900",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1900,
+            "Landowner Type": oxfordTypes1900,
+            "Family Origins": oxfordOrigins1900,
+            "Ownership Percentile": oxfordWealth1900
+  				}
+        },
+        {
+					groupName : "1917",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1917,
+            "Landowner Type": oxfordTypes1917,
+            "Family Origins": oxfordOrigins1917,
+            "Ownership Percentile": oxfordWealth1917
+  				}
+        },
+        {
+					groupName : "1934",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1934,
+            "Landowner Type": oxfordTypes1934,
+            "Family Origins": oxfordOrigins1934,
+            "Ownership Percentile": oxfordWealth1934
+  				}
+        },
+        {
+					groupName : "1939",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1939,
+            "Landowner Type": oxfordTypes1939,
+            "Family Origins": oxfordOrigins1939,
+            "Ownership Percentile": oxfordWealth1939
+  				}
+        },
+        {
+					groupName : "1948",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1948,
+            "Landowner Type": oxfordTypes1948,
+            "Family Origins": oxfordOrigins1948,
+            "Ownership Percentile": oxfordWealth1948
+  				}
+        },
+        {
+					groupName : "1953",
+          expanded : false,
+          layers : {
+            "Property Boundaries": oxfordLots1953,
+            "Landowner Type": oxfordTypes1953,
+            "Family Origins": oxfordOrigins1953,
+            "Ownership Percentile": oxfordWealth1953
+  				}
+        },
+			];
+
+      var options = {
+				container_width 	: "300px",
+				group_maxHeight     : "80px",
+				//container_maxHeight : "350px",
+				exclusive       	: true
+			};
+
+		  var control = L.Control.styledLayerControl(baseMaps, null, options);
+			map.addControl(control);
+
+      //disable dragging of the map after clicking the layer control
+      jQuery('.ac-container').click(function() {
+        map.dragging.disable();
+      });
+
+      //disable dragging of the map after scrolling the layer control
+      jQuery('.ac-container').scroll(function() {
+        map.dragging.disable();
+      });
+
+      //enable dragging of the map after clicking on the map
+      map.on('click', function() {
+        map.dragging.enable();
+      });
+
+      // create legend for ownership type
+      var typeLegend = L.control({
+        position: 'bottomright'
+      });
 
       // create legend for the family origins
       var originLegend = L.control({
         position: 'bottomright'
       });
 
+      // create legend for ownership percentiles
+      var wealthLegend = L.control({
+        position: 'bottomright'
+      });
+
+      // add content to the legend
+      typeLegend.onAdd = function(map) {
+
+        var div = L.DomUtil.create('div', 'info legend'),
+          grades = ['Absentee', 'Corporation', 'Resident'],
+          labels = ["<h3 style='font-size:14px; font-weight:bold'>Land Ownership Type</h3>"];
+
+        // loop through our origins and generate a label with a colored square for each
+        for (var i = 0; i < grades.length; i++) {
+          div.innerHTML +=
+            labels.push('<i style="background:' + getColorType(grades[i]) + '"></i> ' +
+              (grades[i]));
+        }
+        div.innerHTML = labels.join('<br>');
+        return div;
+      };
+
       // add content to the legend
       originLegend.onAdd = function(map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-          grades = ['Canada', 'E. Europe', 'Northeastern US', 'Germanic', 'Iowa', 'Midwestern US', 'Southern US', 'UK', 'N. Europe', 'No Data'],
+          grades = ['Austria-Hungary-Czech', 'Eastern U.S.', 'Germany', 'Iowa', 'Ireland', 'Midwest U.S.', 'UK', 'Other'],
           labels = ["<h3 style='font-size:14px; font-weight:bold'>Family Origins</h3>"];
 
         // loop through our origins and generate a label with a colored square for each
@@ -320,8 +2112,47 @@
         return div;
       };
 
+      // add content to the legend
+      wealthLegend.onAdd = function(map) {
+
+        var div = L.DomUtil.create('div', 'info legend'),
+          grades = ['Top 10%', 'Middle 40%', 'Bottom 50%'],
+          labels = ["<h3 style='font-size:14px; font-weight:bold'>Land Ownership Percentile</h3>"];
+
+        // loop through our origins and generate a label with a colored square for each
+        for (var i = 0; i < grades.length; i++) {
+          div.innerHTML +=
+            labels.push('<i style="background:' + getColorWealth(grades[i]) + '"></i> ' +
+              (grades[i]));
+        }
+        div.innerHTML = labels.join('<br>');
+        return div;
+      };
+
       // add this legend to the map, because this legend is on by default
-      originLegend.addTo(map);
+      //originLegend.addTo(map);
+
+      // when the user changes the baselayer, switch the legend
+      map.on('baselayerchange', function(eventLayer) {
+        // Switch to the Confirmed Cases legend...
+        if (eventLayer.name === 'Landowner Type') {
+          this.removeControl(originLegend);
+          this.removeControl(wealthLegend);
+          typeLegend.addTo(this);
+        } if (eventLayer.name === 'Family Origins') {
+          this.removeControl(typeLegend);
+          this.removeControl(wealthLegend);
+          originLegend.addTo(this);
+        } if (eventLayer.name === 'Ownership Percentile') {
+          this.removeControl(typeLegend);
+          this.removeControl(originLegend);
+          wealthLegend.addTo(this);
+        } if (eventLayer.name === 'Property Boundaries') { // Or switch to the Confirmed Deaths legend...
+          this.removeControl(originLegend);
+          this.removeControl(typeLegend);
+          this.removeControl(wealthLegend);
+        }
+      });
 
     }; // end drawMap function
 
