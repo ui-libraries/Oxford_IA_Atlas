@@ -17,11 +17,16 @@
   <link rel="stylesheet" href="src/leaflet-tag-filter-button.css">
   <link rel="stylesheet" href="src/easy-button.css">
 
+  <!-- for info button -->
+  <link rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'>
+
   <!--for styled layer control-->
   <link rel="stylesheet" href="css/styledLayerControl.css" />
 
   <style type="text/css">
-    <style>body {
+    <style>
+
+    body {
       margin: 0px;
       height: 100%;
       width: 100%;
@@ -171,22 +176,31 @@
 <body>
   <header>
     <h1>Land Ownership in Oxford, Iowa: 1859 - 1953</h1><br>
-    <h2>Research and map by Matthew Noellert, PhD, et al. | University of Iowa Digital Scholarship & Publishing Studio, 2020 | Click <a href="https://dsps.lib.uiowa.edu/digital-oxford-twp/sources/data/#GIS">here</a> for works cited.</h2>
+    <h2>Research and map by Matthew Noellert, PhD, et al. | University of Iowa Digital Scholarship & Publishing Studio, 2020 | Click <a href="https://dsps.lib.uiowa.edu/digital-oxford-twp/sources/data/#GIS" target="_blank">here</a> for works cited.</h2>
   </header>
 
   <!-- map -->
   <div id="map"></div>
+
+  <!-- button-dependent info window -->
+  <div id="dialog" title="Land Ownership in Oxford, IA">
+    <h4>This is a map of land ownership and family origins for Oxford, Iowa from 1859 to 1953. You can toggle different layers of this dataset with the expandable control in the top right corner. As you do so, you will notice a layer-based legend appear in the bottom right corner. Please click on the land lot polygons for more information. References for this map can be found
+      <a href="https://dsps.lib.uiowa.edu/digital-oxford-twp/sources/data/#GIS" style='color: blue;' target="_blank">here</a>. This map is intended for research and is not to be used for legal purposes.
+    </h4>
+  </div>
+  <!-- end button-dependent info window -->
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
   <script src='https://api.mapbox.com/mapbox-assembly/v0.8.0/assembly.js'></script>
 
-  <!-- for button-dependent map information window -->
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+  <!--leaflet tag filter buttons from: https://github.com/maydemirx/leaflet-tag-filter-button-->
   <script src="src/easy-button.js"></script>
   <script src="src/leaflet-tag-filter-button.js"></script>
+
+  <!-- for button-dependent map information window -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!--for styled layer control-->
   <script src="src/styledLayerControl.js"></script>
@@ -1897,6 +1911,21 @@
         }
 
       });
+
+      // create an info button to describe the map and supporting data
+      var infoButton = L.easyButton({
+        id: 'infoButton',
+        position: 'topright',
+        states: [{
+          stateName: 'show-info',
+          icon: '<strong>?</strong>',
+          title: 'Tell me about this map',
+          onClick: function(btn, map) {
+            $("#dialog").dialog({ position: { my: 'middle', at: 'top+300'}, });
+          }
+        }]
+      }).addTo(map);
+
 /*
       L.control.tagFilterButton({
           data: ['Canada', 'E. Europe', 'Northeastern US', 'Germanic', 'Iowa', 'Midwestern US', 'Southern US', 'UK', 'N. Europe', 'No Data'],
@@ -2105,7 +2134,7 @@
       };
 
       // add this legend to the map, because the associated layer is on by default
-      originLegend.addTo(map);
+      //originLegend.addTo(map);
 
       // when the user changes the baselayer, switch the legend
       map.on('baselayerchange', function(eventLayer) {
