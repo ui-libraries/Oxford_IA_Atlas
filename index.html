@@ -200,14 +200,19 @@
 
     var overmap1 = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzi05u17851ip494ycaerz');
 */
-
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+      maxZoom: 16,
+      minZoom: 12,
+    });
+/*
     var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     	subdomains: 'abcd',
     	maxZoom: 16,
       minZoom: 12,
     });
-/*
+
         // define the basemap using the thunderforest pioneer map and set minimum and maximum zoom levels
         var Thunderforest = L.tileLayer('https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=dd2dca516d114fd89c0b1403358cbfa8', {
           attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -219,7 +224,7 @@
     // center map on Iowa coordinates and set initial zoom
     var map = L.map('map', {
       maxBounds: L.latLngBounds([44, -88.0], [40.0, -99.0]),
-      layers: CartoDB_Positron,
+      layers: Esri_WorldImagery,
     }).setView([41.742764, -91.768114], 12);
 
     // add a scale bar
@@ -251,9 +256,9 @@
 
     // Add a function to style the polygons by ownership percentile
     function getColorWealth(d) {
-      return d === "Top 10%" ? '#31a354' :
-        d === "Middle 40%" ? '#addd8e' :
-        d === "Bottom 50%" ? '#f7fcb9' :
+      return d === "Top 10%" ? '#2c7fb8' :
+        d === "Middle 40%" ? '#7fcdbb' :
+        d === "Bottom 50%" ? '#edf8b1' :
       'rgba(0,0,0,0.0)';
     };
 
@@ -283,7 +288,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -328,7 +333,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -372,7 +377,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -416,7 +421,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -463,7 +468,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -508,7 +513,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -552,7 +557,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -596,7 +601,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -643,7 +648,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -688,7 +693,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -732,7 +737,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -776,7 +781,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -823,7 +828,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -868,7 +873,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -912,7 +917,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -956,7 +961,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -1003,7 +1008,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -1048,7 +1053,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -1092,7 +1097,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -1136,7 +1141,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -1183,7 +1188,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -1228,7 +1233,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -1272,7 +1277,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -1316,7 +1321,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -1363,7 +1368,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -1408,7 +1413,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -1452,7 +1457,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -1496,7 +1501,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -1543,7 +1548,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -1588,7 +1593,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -1632,7 +1637,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -1676,7 +1681,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
@@ -1723,7 +1728,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: '#cd89ab',
@@ -1768,7 +1773,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorType(feature.properties.owntype),
@@ -1812,7 +1817,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorOrigin(feature.properties.fam_origin),
@@ -1856,7 +1861,7 @@
 
           return {
             stroke: 1,
-            color: 'grey',
+            color: 'white',
             strokeOpacity: 1,
             weight: 1,
             fillColor: getColorWealth(feature.properties.wealth_percentile),
