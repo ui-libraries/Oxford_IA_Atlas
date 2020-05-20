@@ -1946,96 +1946,66 @@
 */
 
       var baseMaps = [
-			  {
-					groupName : "1859",
+        {
+					groupName : "Property Boundaries",
 					expanded : false,
 					layers : {
-            "Property Boundaries": oxfordLots1859,
-            "Landowner Type": oxfordTypes1859,
-            "Family Origins": oxfordOrigins1859,
-            "Ownership Percentile": oxfordWealth1859
+            "Lot Boundaries, 1859": oxfordLots1859,
+            "Lot Boundaries, 1870": oxfordLots1870,
+            "Lot Boundaries, 1889": oxfordLots1889,
+            "Lot Boundaries, 1900": oxfordLots1900,
+            "Lot Boundaries, 1917": oxfordLots1917,
+            "Lot Boundaries, 1934": oxfordLots1934,
+            "Lot Boundaries, 1939": oxfordLots1939,
+            "Lot Boundaries, 1948": oxfordLots1948,
+            "Lot Boundaries, 1953": oxfordLots1953,
 					}
 				},
         {
-					groupName : "1870",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1870,
-            "Landowner Type": oxfordTypes1870,
-            "Family Origins": oxfordOrigins1870,
-            "Ownership Percentile": oxfordWealth1870
-  				}
-        },
+					groupName : "Landowner Type",
+					expanded : false,
+					layers : {
+            "Landowner Type, 1859": oxfordTypes1859,
+            "Landowner Type, 1870": oxfordTypes1870,
+            "Landowner Type, 1889": oxfordTypes1889,
+            "Landowner Type, 1900": oxfordTypes1900,
+            "Landowner Type, 1917": oxfordTypes1917,
+            "Landowner Type, 1934": oxfordTypes1934,
+            "Landowner Type, 1939": oxfordTypes1939,
+            "Landowner Type, 1948": oxfordTypes1948,
+            "Landowner Type, 1953": oxfordTypes1953,
+					}
+				},
         {
-					groupName : "1889",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1889,
-            "Landowner Type": oxfordTypes1889,
-            "Family Origins": oxfordOrigins1889,
-            "Ownership Percentile": oxfordWealth1889
-  				}
-        },
+					groupName : "Family Origins",
+					expanded : false,
+					layers : {
+            "Family Origins, 1859": oxfordOrigins1859,
+            "Family Origins, 1870": oxfordOrigins1870,
+            "Family Origins, 1889": oxfordOrigins1889,
+            "Family Origins, 1900": oxfordOrigins1900,
+            "Family Origins, 1917": oxfordOrigins1917,
+            "Family Origins, 1934": oxfordOrigins1934,
+            "Family Origins, 1939": oxfordOrigins1939,
+            "Family Origins, 1948": oxfordOrigins1948,
+            "Family Origins, 1953": oxfordOrigins1953,
+					}
+				},
         {
-					groupName : "1900",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1900,
-            "Landowner Type": oxfordTypes1900,
-            "Family Origins": oxfordOrigins1900,
-            "Ownership Percentile": oxfordWealth1900
-  				}
-        },
-        {
-					groupName : "1917",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1917,
-            "Landowner Type": oxfordTypes1917,
-            "Family Origins": oxfordOrigins1917,
-            "Ownership Percentile": oxfordWealth1917
-  				}
-        },
-        {
-					groupName : "1934",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1934,
-            "Landowner Type": oxfordTypes1934,
-            "Family Origins": oxfordOrigins1934,
-            "Ownership Percentile": oxfordWealth1934
-  				}
-        },
-        {
-					groupName : "1939",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1939,
-            "Landowner Type": oxfordTypes1939,
-            "Family Origins": oxfordOrigins1939,
-            "Ownership Percentile": oxfordWealth1939
-  				}
-        },
-        {
-					groupName : "1948",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1948,
-            "Landowner Type": oxfordTypes1948,
-            "Family Origins": oxfordOrigins1948,
-            "Ownership Percentile": oxfordWealth1948
-  				}
-        },
-        {
-					groupName : "1953",
-          expanded : false,
-          layers : {
-            "Property Boundaries": oxfordLots1953,
-            "Landowner Type": oxfordTypes1953,
-            "Family Origins": oxfordOrigins1953,
-            "Ownership Percentile": oxfordWealth1953
-  				}
-        },
+					groupName : "Ownership Percentile",
+					expanded : false,
+					layers : {
+            "Ownership Percentile, 1859": oxfordWealth1859,
+            "Ownership Percentile, 1870": oxfordWealth1870,
+            "Ownership Percentile, 1889": oxfordWealth1889,
+            "Ownership Percentile, 1900": oxfordWealth1900,
+            "Ownership Percentile, 1917": oxfordWealth1917,
+            "Ownership Percentile, 1934": oxfordWealth1934,
+            "Ownership Percentile, 1939": oxfordWealth1939,
+            "Ownership Percentile, 1948": oxfordWealth1948,
+            "Ownership Percentile, 1953": oxfordWealth1953,
+					}
+				},
 			];
 
       var options = {
@@ -2134,20 +2104,19 @@
 
       // when the user changes the baselayer, switch the legend
       map.on('baselayerchange', function(eventLayer) {
-        // Switch to the Confirmed Cases legend...
-        if (eventLayer.name === 'Landowner Type') {
+        if (eventLayer.name.includes('Landowner Type')) {
           this.removeControl(originLegend);
           this.removeControl(wealthLegend);
           typeLegend.addTo(this);
-        } if (eventLayer.name === 'Family Origins') {
+        } if (eventLayer.name.includes('Family Origins')) {
           this.removeControl(typeLegend);
           this.removeControl(wealthLegend);
           originLegend.addTo(this);
-        } if (eventLayer.name === 'Ownership Percentile') {
+        } if (eventLayer.name.includes('Ownership Percentile')) {
           this.removeControl(typeLegend);
           this.removeControl(originLegend);
           wealthLegend.addTo(this);
-        } if (eventLayer.name === 'Property Boundaries') { // Or switch to the Confirmed Deaths legend...
+        } if (eventLayer.name.includes('Lot Boundaries')) {
           this.removeControl(originLegend);
           this.removeControl(typeLegend);
           this.removeControl(wealthLegend);
