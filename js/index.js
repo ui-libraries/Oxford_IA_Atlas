@@ -1753,7 +1753,7 @@
       map.on('click', function() {
         map.dragging.enable();
       });
-*/
+
       var baseMaps = {
         "Lot Boundaries, 1859": oxfordLots1859,
         "Lot Boundaries, 1870": oxfordLots1870,
@@ -1801,8 +1801,8 @@
       L.control.layers(baseMaps, null, {
         collapsed: true,
       }).addTo(map);
+*/
 
-/*
       var baseMaps = [
         {
 					groupName : "Property Boundaries",
@@ -1890,7 +1890,7 @@
       map.on('click', function() {
         map.dragging.enable();
       });
-*/
+
       // create legend for ownership type
       var typeLegend = L.control({
         position: 'bottomright'
