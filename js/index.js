@@ -1,35 +1,13 @@
-/*
-    // add mapbox tiles
-    L.mapbox.accessToken = 'pk.eyJ1IjoiamVib3dlMyIsImEiOiJjajY1M3l6bWIxeTQwMndtcXRuN3F4ejFpIn0.aE7P49pqaBKjy2HTOw-tgw'; // enter Mapbox access token
 
-    var basemap = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzc5x7100a1jp70zpxcxap');
-
-    var overmap1 = L.mapbox.styleLayer('mapbox://styles/jebowe3/ck8lzi05u17851ip494ycaerz');
-*/
     var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
       maxZoom: 16,
       minZoom: 12,
     });
-/*
-    var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    	subdomains: 'abcd',
-    	maxZoom: 16,
-      minZoom: 12,
-    });
 
-        // define the basemap using the thunderforest pioneer map and set minimum and maximum zoom levels
-        var Thunderforest = L.tileLayer('https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=dd2dca516d114fd89c0b1403358cbfa8', {
-          attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          apikey: '<dd2dca516d114fd89c0b1403358cbfa8>',
-          maxZoom: 16,
-          minZoom: 7,
-        });
-*/
     // center map on Iowa coordinates and set initial zoom
     var map = L.map('map', {
-      maxBounds: L.latLngBounds([44, -88.0], [40.0, -99.0]),
+      maxBounds: L.latLngBounds([41.94276, -91.56811], [41.54276, -91.96811]), // cannot pan past these coordinates
       layers: Esri_WorldImagery,
     }).setView([41.742764, -91.768114], 12);
 
