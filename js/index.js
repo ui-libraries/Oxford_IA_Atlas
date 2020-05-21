@@ -242,21 +242,6 @@
 
       });
 
-      var oxfordOff1859 = L.geoJson(oxford1859, {
-        // style the layer
-        style: function(feature) {
-
-          return {
-            stroke: 0,
-            color: 'rgba(0,0,0,0.0)',
-            strokeOpacity: 0,
-            weight: 0,
-            fillColor: 'rgba(0,0,0,0.0)',
-            fillOpacity: 0,
-          };
-        },
-      });
-
       var oxfordLots1870 = L.geoJson(oxford1870, {
 
         // style the layer
@@ -1697,6 +1682,66 @@
 
       });
 
+      var oxfordLotsOff = L.geoJson(oxford1859, {
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 0,
+            color: 'rgba(0,0,0,0.0)',
+            strokeOpacity: 0,
+            weight: 0,
+            fillColor: 'rgba(0,0,0,0.0)',
+            fillOpacity: 0,
+          };
+        },
+      });
+
+      var oxfordTypesOff = L.geoJson(oxford1870, {
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 0,
+            color: 'rgba(0,0,0,0.0)',
+            strokeOpacity: 0,
+            weight: 0,
+            fillColor: 'rgba(0,0,0,0.0)',
+            fillOpacity: 0,
+          };
+        },
+      });
+
+      var oxfordOriginsOff = L.geoJson(oxford1889, {
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 0,
+            color: 'rgba(0,0,0,0.0)',
+            strokeOpacity: 0,
+            weight: 0,
+            fillColor: 'rgba(0,0,0,0.0)',
+            fillOpacity: 0,
+          };
+        },
+      });
+
+      var oxfordWealthOff = L.geoJson(oxford1900, {
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 0,
+            color: 'rgba(0,0,0,0.0)',
+            strokeOpacity: 0,
+            weight: 0,
+            fillColor: 'rgba(0,0,0,0.0)',
+            fillOpacity: 0,
+          };
+        },
+      });
+
       // create an info button to describe the map and supporting data
       var infoButton = L.easyButton({
         id: 'infoButton',
@@ -1722,6 +1767,7 @@
           "Lot Boundaries, 1939": oxfordLots1939,
           "Lot Boundaries, 1948": oxfordLots1948,
           "Lot Boundaries, 1953": oxfordLots1953,
+          "Off": oxfordLotsOff
         },
         "<span class='controlHeading'>Landowner Type</span>": {
           "Landowner Type, 1859": oxfordTypes1859,
@@ -1733,6 +1779,7 @@
           "Landowner Type, 1939": oxfordTypes1939,
           "Landowner Type, 1948": oxfordTypes1948,
           "Landowner Type, 1953": oxfordTypes1953,
+          "Off": oxfordTypesOff
         },
         "<span class='controlHeading'>Family Origins</span>": {
           "Family Origins, 1859": oxfordOrigins1859,
@@ -1744,6 +1791,7 @@
           "Family Origins, 1939": oxfordOrigins1939,
           "Family Origins, 1948": oxfordOrigins1948,
           "Family Origins, 1953": oxfordOrigins1953,
+          "Off": oxfordOriginsOff
         },
         "<span class='controlHeading'>Ownership Percentile</span>": {
           "Ownership Percentile, 1859": oxfordWealth1859,
@@ -1755,6 +1803,7 @@
           "Ownership Percentile, 1939": oxfordWealth1939,
           "Ownership Percentile, 1948": oxfordWealth1948,
           "Ownership Percentile, 1953": oxfordWealth1953,
+          "Off": oxfordWealthOff
         }
       };
 
@@ -2025,7 +2074,7 @@
       //originLegend.addTo(map);
 
       // when the user changes the baselayer, switch the legend
-      map.on('baselayerchange', function(eventLayer) {
+      map.on('overlayadd', function(eventLayer) {
         if (eventLayer.name.includes('Landowner Type')) {
           this.removeControl(originLegend);
           this.removeControl(wealthLegend);
