@@ -242,6 +242,21 @@
 
       });
 
+      var oxfordOff1859 = L.geoJson(oxford1859, {
+        // style the layer
+        style: function(feature) {
+
+          return {
+            stroke: 0,
+            color: 'rgba(0,0,0,0.0)',
+            strokeOpacity: 0,
+            weight: 0,
+            fillColor: 'rgba(0,0,0,0.0)',
+            fillOpacity: 0,
+          };
+        },
+      });
+
       var oxfordLots1870 = L.geoJson(oxford1870, {
 
         // style the layer
@@ -1696,6 +1711,78 @@
         }]
       }).addTo(map);
 
+      var groupedOverlays = {
+        "<span class='controlHeading'>Property Boundaries</span>": {
+          "Lot Boundaries, 1859": oxfordLots1859,
+          "Lot Boundaries, 1870": oxfordLots1870,
+          "Lot Boundaries, 1889": oxfordLots1889,
+          "Lot Boundaries, 1900": oxfordLots1900,
+          "Lot Boundaries, 1917": oxfordLots1917,
+          "Lot Boundaries, 1934": oxfordLots1934,
+          "Lot Boundaries, 1939": oxfordLots1939,
+          "Lot Boundaries, 1948": oxfordLots1948,
+          "Lot Boundaries, 1953": oxfordLots1953,
+        },
+        "<span class='controlHeading'>Landowner Type</span>": {
+          "Landowner Type, 1859": oxfordTypes1859,
+          "Landowner Type, 1870": oxfordTypes1870,
+          "Landowner Type, 1889": oxfordTypes1889,
+          "Landowner Type, 1900": oxfordTypes1900,
+          "Landowner Type, 1917": oxfordTypes1917,
+          "Landowner Type, 1934": oxfordTypes1934,
+          "Landowner Type, 1939": oxfordTypes1939,
+          "Landowner Type, 1948": oxfordTypes1948,
+          "Landowner Type, 1953": oxfordTypes1953,
+        },
+        "<span class='controlHeading'>Family Origins</span>": {
+          "Family Origins, 1859": oxfordOrigins1859,
+          "Family Origins, 1870": oxfordOrigins1870,
+          "Family Origins, 1889": oxfordOrigins1889,
+          "Family Origins, 1900": oxfordOrigins1900,
+          "Family Origins, 1917": oxfordOrigins1917,
+          "Family Origins, 1934": oxfordOrigins1934,
+          "Family Origins, 1939": oxfordOrigins1939,
+          "Family Origins, 1948": oxfordOrigins1948,
+          "Family Origins, 1953": oxfordOrigins1953,
+        },
+        "<span class='controlHeading'>Ownership Percentile</span>": {
+          "Ownership Percentile, 1859": oxfordWealth1859,
+          "Ownership Percentile, 1870": oxfordWealth1870,
+          "Ownership Percentile, 1889": oxfordWealth1889,
+          "Ownership Percentile, 1900": oxfordWealth1900,
+          "Ownership Percentile, 1917": oxfordWealth1917,
+          "Ownership Percentile, 1934": oxfordWealth1934,
+          "Ownership Percentile, 1939": oxfordWealth1939,
+          "Ownership Percentile, 1948": oxfordWealth1948,
+          "Ownership Percentile, 1953": oxfordWealth1953,
+        }
+      };
+
+      var options = {
+        // Make the "Base Maps" group exclusive (use radio inputs)
+        exclusiveGroups: ["<span class='controlHeading'>Property Boundaries</span>", "<span class='controlHeading'>Landowner Type</span>", "<span class='controlHeading'>Family Origins</span>", "<span class='controlHeading'>Ownership Percentile</span>"],
+        // Show a checkbox next to non-exclusive group labels for toggling all
+        groupCheckboxes: true,
+        collapsed: false
+      };
+
+      // Use the custom grouped layer control, not "L.control.layers"
+      L.control.groupedLayers(null, groupedOverlays, options).addTo(map);
+
+      $('.leaflet-control-layers-group-label').each(function(index){
+      	var self = $(this),
+        		trigger = $('<label>', {
+              class:'trigger',
+              for: 'dropdown-trigger-' + index
+            }).insertBefore(self),
+            radio = $('<input>', {
+            	type : 'radio',
+              class: 'trigger-radio',
+              name : 'dropdown-control',
+              id: 'dropdown-trigger-' + index
+            }).insertBefore(trigger);
+      });
+
 /*
       L.control.tagFilterButton({
           data: ['Canada', 'E. Europe', 'Northeastern US', 'Germanic', 'Iowa', 'Midwestern US', 'Southern US', 'UK', 'N. Europe', 'No Data'],
@@ -1779,7 +1866,6 @@
       L.control.layers(baseMaps, null, {
         collapsed: true,
       }).addTo(map);
-*/
 
       var baseMaps = [
         {
@@ -1868,7 +1954,7 @@
       map.on('click', function() {
         map.dragging.enable();
       });
-
+*/
       // create legend for ownership type
       var typeLegend = L.control({
         position: 'bottomright'

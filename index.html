@@ -23,154 +23,7 @@
   <!--for styled layer control-->
   <link rel="stylesheet" href="css/styledLayerControl.css" />
 
-  <style type="text/css">
-    <style>
-
-    body {
-      margin: 0px;
-      height: 100%;
-      width: 100%;
-    }
-
-    /* Add banner to header background */
-    header {
-      background-image: url('images/Sheep_farm_Oxford.png');
-      position: fixed;
-      width: 100%;
-      height: 100px;
-      background-color: #000000;
-      box-shadow: 0px 5px 5px black;
-      z-index: 800;
-    }
-
-    /* Set and style fonts for text in map */
-    h1 {
-      font-family: 'Quattrocento', serif;
-      font-size: 40px;
-      display: inline-block;
-      color: white;
-      margin-top: 0.5em;
-      margin-bottom: 0.0em;
-      margin-left: 0.5em;
-      margin-right: 0;
-      font-weight: normal;
-    }
-
-    h2 {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 15px;
-      display: inline-block;
-      color: white;
-      margin-top: 0.5em;
-      margin-bottom: 0.0em;
-      margin-left: 1.5em;
-      margin-right: 0;
-      font-weight: normal;
-    }
-
-    h3 {
-      font-family: 'Quattrocento', serif;
-      font-size: 12px;
-      display: inline-block;
-      margin-top: 0.0em;
-      margin-bottom: 0.0em;
-      margin-left: 0;
-      margin-right: 0;
-      font-weight: bold;
-    }
-
-    h4 {
-      font-family: 'Quattrocento', serif;
-      font-size: 12px;
-      display: inline-block;
-      margin-top: 0.0em;
-      margin-bottom: 0.0em;
-      margin-left: 0;
-      margin-right: 0;
-      font-weight: normal;
-    }
-
-    /* Set map parameters */
-    #map {
-      position: fixed;
-      top: 100px;
-      bottom: 0px;
-      width: 100%;
-    }
-
-    /* Set background colors for popup windows */
-    .leaflet-popup-content-wrapper {
-      background-color: white;
-    }
-
-    .leaflet-popup-tip {
-      /*display: none;*/
-      border-top:10px solid white;
-    }
-
-    /* Set background color of layer control */
-    .leaflet-control-layers-expanded {
-      font-family: 'Quattrocento', serif;
-      font-size: 15px;
-      display: inline-block;
-      background-color: white;
-    }
-
-    .easy-button-button {
-      display: inline-block !important;
-    }
-
-    .tag-filter-tags-container {
-      left: 30px;
-    }
-
-    .leaflet-touch .leaflet-bar a {
-      background-color: white;
-    }
-
-    .legend {
-      background-color: white;
-      border-radius: 3px;
-      bottom: 30px;
-      width: 175px;
-      box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
-      font: 12px/20px 'Quattrocento', 'Quattrocento', 'Quattrocento', serif;
-      padding: 10px;
-      position: absolute;
-      right: 10px;
-      z-index: 1;
-      line-height: 18px;
-      color: #555;
-    }
-
-    .legend i {
-      width: 10px;
-      height: 10px;
-      float: left;
-      margin-right: 15px;
-      margin-top: 4px;
-      opacity: 0.7;
-    }
-
-    /* leaflet layers control plugin css */
-    .leaflet-control-layers-group-name{font-weight:700;margin-bottom:.2em;margin-left:3px}.leaflet-control-layers-group{margin-bottom:.5em}
-
-    .leaflet-control-layers .leaflet-control-layers-group-label{padding-left:20px;display:block}
-    .leaflet-control-layers label{padding-left:40px;padding-right:10px;display:none;}
-    .leaflet-control-layers label.trigger{
-      position:absolute;
-      left:0;
-      padding:0;
-      margin:0;
-      display:block;
-      cursor:pointer;
-    }
-    .leaflet-control-layers label.trigger:before{content:"▶";font-weight:normal;}
-    .leaflet-control-layers .trigger-radio:checked ~ label.trigger:before{content:"▼"}
-
-    .leaflet-control-layers .trigger-radio{display:none;}
-    .leaflet-control-layers .trigger-radio:checked ~ label{display:block;}
-  </style>
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
@@ -204,6 +57,9 @@
 
   <!--for styled layer control-->
   <script src="js/styledLayerControl.js"></script>
+
+  <!--for dropdown grouped layer control-->
+  <script src="js/grouped-layers.js"></script>
 
   <script src="js/index.js"></script>
 </body>
