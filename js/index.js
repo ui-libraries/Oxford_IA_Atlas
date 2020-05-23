@@ -2071,7 +2071,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1859 = new L.Control.Search({
     layer: oxfordLots1859,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2104,7 +2104,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1870 = new L.Control.Search({
     layer: oxfordLots1870,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2135,7 +2135,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1889 = new L.Control.Search({
     layer: oxfordLots1889,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2166,7 +2166,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1900 = new L.Control.Search({
     layer: oxfordLots1900,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2197,7 +2197,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1917 = new L.Control.Search({
     layer: oxfordLots1917,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2228,7 +2228,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1934 = new L.Control.Search({
     layer: oxfordLots1934,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2259,7 +2259,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1939 = new L.Control.Search({
     layer: oxfordLots1939,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2290,7 +2290,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1948 = new L.Control.Search({
     layer: oxfordLots1948,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
@@ -2321,7 +2321,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1953 = new L.Control.Search({
     layer: oxfordLots1953,
-    propertyName: 'surname',
+    propertyName: 'fullname',
     marker: false,
     moveToLocation: function(latlng, title, map) {
       //map.fitBounds( latlng.layer.getBounds() );
