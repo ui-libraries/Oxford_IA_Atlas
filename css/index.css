@@ -137,7 +137,7 @@ h4 {
   display:block;
   cursor:pointer;
 }
-.leaflet-control-layers label.trigger:before{content:"▶";font-weight:normal;}
+.leaflet-control-layers label.trigger:before{content:"▶";font-weight:normal;font-size: 10px}
 .leaflet-control-layers .trigger-radio:checked ~ label.trigger:before{content:"▼"}
 
 .leaflet-control-layers .trigger-radio{display:none;}
