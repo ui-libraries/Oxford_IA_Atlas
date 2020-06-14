@@ -1,13 +1,17 @@
+var imagery1930 = L.tileLayer.wms('https://ortho.gis.iastate.edu/arcgis/services/ortho/ortho_1930/ImageServer/WMSServer?', {
+  layers: 'ortho_1930'
+});
+/*
 var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
   maxZoom: 16,
   minZoom: 12,
 });
-
+*/
 // center map on Iowa coordinates and set initial zoom
 var map = L.map('map', {
   maxBounds: L.latLngBounds([41.94276, -91.56811], [41.54276, -91.96811]), // cannot pan past these coordinates
-  layers: Esri_WorldImagery,
+  layers: imagery1930,
 }).setView([41.742764, -91.768114], 12);
 
 // add a scale bar
