@@ -1863,6 +1863,7 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
       title: 'Tell me about this map',
       onClick: function(btn, map) {
         $("#dialog").dialog({
+          width: '400px',
           position: {
             my: 'middle',
             at: 'top+450'
