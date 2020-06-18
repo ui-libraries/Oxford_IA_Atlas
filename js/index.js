@@ -2076,283 +2076,310 @@ function drawMap(err, oxford1859, oxford1870, oxford1889, oxford1900, oxford1917
 
   var searchControl1859 = new L.Control.Search({
     layer: oxfordLots1859,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1859.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1859.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1859.eachLayer(function(layer) { //restore feature color
       oxfordLots1859.resetStyle(layer);
     });
+    
   });
 
   map.addControl(searchControl1859); //initialize this search control because it is the default
 
   var searchControl1870 = new L.Control.Search({
     layer: oxfordLots1870,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1870.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1870.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1870.eachLayer(function(layer) { //restore feature color
       oxfordLots1870.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1889 = new L.Control.Search({
     layer: oxfordLots1889,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1889.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1889.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1889.eachLayer(function(layer) { //restore feature color
       oxfordLots1889.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1900 = new L.Control.Search({
     layer: oxfordLots1900,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1900.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1900.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1900.eachLayer(function(layer) { //restore feature color
       oxfordLots1900.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1917 = new L.Control.Search({
     layer: oxfordLots1917,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1917.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1917.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1917.eachLayer(function(layer) { //restore feature color
       oxfordLots1917.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1934 = new L.Control.Search({
     layer: oxfordLots1934,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1934.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1934.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1934.eachLayer(function(layer) { //restore feature color
       oxfordLots1934.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1939 = new L.Control.Search({
     layer: oxfordLots1939,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1939.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1939.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1939.eachLayer(function(layer) { //restore feature color
       oxfordLots1939.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1948 = new L.Control.Search({
     layer: oxfordLots1948,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1948.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1948.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1948.eachLayer(function(layer) { //restore feature color
       oxfordLots1948.resetStyle(layer);
     });
+
   }); // end search control
 
   var searchControl1953 = new L.Control.Search({
     layer: oxfordLots1953,
-    propertyName: 'fullname',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-      //map.fitBounds( latlng.layer.getBounds() );
-      var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-      map.setView(latlng, zoom); // access the zoom
-    }
+    propertyName: 'surname',
+    marker: false
   });
 
   searchControl1953.on('search:locationfound', function(e) {
 
-    //console.log('search:locationfound', );
+    // Declare a variable to identify the text searched for in the search bar
+    var inputTxt = document.getElementById("searchtext9").value;
 
-    //map.removeLayer(this._markerSearch)
+    oxfordLots1953.eachLayer(function(layer) {
 
-    e.layer.setStyle({
-      fillColor: '#3f0',
-      color: '#0f0'
+      // Declare a variable to identify the surnames of all property owners
+      var lastName = layer.feature.properties.surname;
+
+      if (lastName == inputTxt) { // If the layer property "surname" equals the search input text...
+        layer.setStyle({
+          fillColor: '#3f0',
+          color: '#0f0'
+        });
+        layer.openPopup();
+      }
+
     });
-    if (e.layer._popup)
-      e.layer.openPopup();
 
   }).on('search:collapsed', function(e) {
 
     oxfordLots1953.eachLayer(function(layer) { //restore feature color
       oxfordLots1953.resetStyle(layer);
     });
+
   }); // end search control
 
   // create legend for ownership type
